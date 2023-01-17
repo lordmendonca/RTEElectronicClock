@@ -1,0 +1,6 @@
+C:\Jason\EIT\Semester_02\01_EAA\Lab\Assignment_2\ElectronicClock\ElectronicClock.cydsn\ElectronicClock.cyprj|28414894-f239-44b3-ba12-3af1a4670062
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|033345db-d81c-4ad2-8953-60109eddc882
+C:\Users\JASON\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|4b101f58-3979-43fe-808c-33a1fc6b2200
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d223022e-0283-4d79-bdce-f90ce7174c5e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|c96b10a6-3f03-4772-b8a0-d585bd16ea1e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|07af82c6-fa00-455e-8d41-3ee6e317db4a

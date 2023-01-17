@@ -1,0 +1,26 @@
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/CortexM3/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevicegnu.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/CortexM3/ARM_GCC_541/Debug/ErikaOS_ee_gnu_change_context_isr.o : C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_gnu_change_context_isr.s 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_gnu_change_context_isr.s : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/CortexM3/ARM_GCC_541/Debug/ErikaOS_ee_gnu_irq_stack.o : C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_gnu_irq_stack.s 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_gnu_irq_stack.s : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/CortexM3/ARM_GCC_541/Debug/ErikaOS_ee_gnu_multi_context.o : C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_gnu_multi_context.s 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_gnu_multi_context.s : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/CortexM3/ARM_GCC_541/Debug/ErikaOS_ee_gnu_oo.o : C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_gnu_oo.s 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_gnu_oo.s : 
+

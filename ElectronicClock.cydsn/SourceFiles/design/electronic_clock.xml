@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rte>
+ <configset>
+  <config name="version" value="Erika 2"/>
+  <config name="path_out" value="{PROJECT_PATH}\out"/>
+  <config name="templateDir" value="{GEN_PATH}\..\templates"/>
+  <config name="userCodeStart" value="/\* USER CODE START {TAG} \*/"/>
+  <config name="userCodeEnd" value="/\* USER CODE END {TAG} \*/"/>
+  <config name="guivers" value="0.1.2"/>
+ </configset>
+ <naming>
+  <config name="signalpoolPrefix" value="sp_"/>
+  <config name="signalpoolPostfix" value=""/>
+  <config name="taskPrefix" value="tsk_"/>
+  <config name="taskPostfix" value=""/>
+  <config name="signalclassPrefix" value="sc_"/>
+  <config name="signalclassPostfix" value=""/>
+  <config name="signalobjectPrefix" value="so_"/>
+  <config name="signalobjectPostfix" value=""/>
+  <config name="swcPrefix" value="swc_"/>
+  <config name="swcPostfix" value=""/>
+  <config name="runnablePrefix" value=""/>
+  <config name="runnablePostfix" value="_run"/>
+  <config name="eventPrefix" value="ev_"/>
+  <config name="eventPostfix" value=""/>
+  <config name="resourcePrefix" value="res_"/>
+  <config name="resourcePostfix" value=""/>
+  <config name="addrPrefix" value="ADR_"/>
+  <config name="addrStartPostfix" value="_START"/>
+  <config name="addrEndPostfix" value="_END"/>
+ </naming>
+ <signalpools>
+  <signalpool description="A single signal pool storing all the objects." endaddr="ADR_SP_COMMON_END" name="sp_common" shortname="common" startaddr="ADR_SP_COMMON_START"/>
+ </signalpools>
+ <tasks>
+  <task description="Task that handles the input signals." events="" mode="Cyclic" name="tsk_input" shortname="input" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="0" timertickperiod="1"/>
+  <task description="Task handling the control operations." events="" mode="Event" name="tsk_control" shortname="control" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="0" timertickperiod="0"/>
+  <task description="Task incrementing the age of all the signals." events="" mode="System" name="tsk_system" shortname="system" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="0" timertickperiod="1"/>
+  <task description="Task handling the TFT display" events="" mode="Cyclic" name="tsk_display" shortname="display" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="0" timertickperiod="1"/>
+ </tasks>
+ <signalclasses>
+  <signalclass description="Signalclass of the clock containig the hours and minutes." name="sc_CLOCK" shortname="CLOCK"/>
+  <signalclass description="Signalclass of the Events." name="sc_EVENT" shortname="EVENT"/>
+ </signalclasses>
+ <signalobjects>
+  <signalobject description="A Signal object containing the hours and the minutes of the clock." indriver="0" name="so_CLOCK" onDataError="0" onDataUpdate="0" outdriver="default" resource="res_clock_Lock" shortname="CLOCK" signalclass="sc_CLOCK" signalpool="sp_common"/>
+  <signalobject description="A Signal oject containing the Events." indriver="default" name="so_EVENT" onDataError="0" onDataUpdate="ev_event_onData" outdriver="0" resource="res_event_Lock" shortname="EVENT" signalclass="sc_EVENT" signalpool="sp_common"/>
+ </signalobjects>
+ <swcs>
+  <swc description="Software component for the clock input." name="swc_CLOCK_input" shortname="CLOCK_input"/>
+  <swc description="Software component for the clock control" name="swc_CLOCK_control" shortname="CLOCK_control"/>
+  <swc description="Software component for the clock display." name="swc_CLOCK_display" shortname="CLOCK_display"/>
+ </swcs>
+ <runnables>
+  <runnable component="swc_CLOCK_input" cycletime="50" description="Runnable for clock input." events="" name="CLOCK_INPUT__run" shortname="" signalIN="" signalOUT="so_EVENT" task="tsk_input"/>
+  <runnable component="swc_CLOCK_control" cycletime="0" description="Runnable for clock control." events="ev_event_onData" name="CLOCK_CONTROL__run" shortname="" signalIN="so_EVENT" signalOUT="so_CLOCK" task="tsk_control"/>
+  <runnable component="swc_CLOCK_display" cycletime="250" description="Runnable for clock display." events="" name="CLOCK_DISPLAY__run" shortname="" signalIN="so_CLOCK" signalOUT="" task="tsk_display"/>
+  <runnable component="swc_CLOCK_control" cycletime="0" description="Runnable for control swc initialization" events="" name="CLOCK_CONTROL_init_run" shortname="init" signalIN="" signalOUT="" task="tsk_control"/>
+ </runnables>
+ <events>
+  <event description="A cyclic Event of 1ms." name="ev_cyclic_1ms" shortname="cyclic_1ms"/>
+  <event description="An Event associated with change in state in event signal." name="ev_event_onData" shortname="event_onData"/>
+ </events>
+ <resources>
+  <resource description="A Ressource for clock object." name="res_clock_Lock" restype="semaphore" shortname="clock_Lock"/>
+  <resource description="A Ressource for event object." name="res_event_Lock" restype="semaphore" shortname="event_Lock"/>
+ </resources>
+</rte>

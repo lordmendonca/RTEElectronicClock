@@ -1,0 +1,2919 @@
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"clock_statemachine.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.STATE__getIndexCurrentState,"ax",%progbits
+  20              		.align	2
+  21              		.global	STATE__getIndexCurrentState
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	STATE__getIndexCurrentState, %function
+  25              	STATE__getIndexCurrentState:
+  26              	.LFB110:
+  27              		.file 1 "SourceFiles\\asw\\clock_statemachine.c"
+   1:SourceFiles\asw/clock_statemachine.c **** 
+   2:SourceFiles\asw/clock_statemachine.c **** /*
+   3:SourceFiles\asw/clock_statemachine.c ****  * Filename: clock_statemachine.c
+   4:SourceFiles\asw/clock_statemachine.c ****  */
+   5:SourceFiles\asw/clock_statemachine.c **** 
+   6:SourceFiles\asw/clock_statemachine.c **** /*****************************************************************************/
+   7:SourceFiles\asw/clock_statemachine.c **** /* Include files                                                             */
+   8:SourceFiles\asw/clock_statemachine.c **** /*****************************************************************************/
+   9:SourceFiles\asw/clock_statemachine.c **** 
+  10:SourceFiles\asw/clock_statemachine.c **** #include "clock_statemachine.h"
+  11:SourceFiles\asw/clock_statemachine.c **** 
+  12:SourceFiles\asw/clock_statemachine.c **** /*****************************************************************************/
+  13:SourceFiles\asw/clock_statemachine.c **** /* Global pre-processor symbols/macros and type declarations                 */
+  14:SourceFiles\asw/clock_statemachine.c **** /*****************************************************************************/
+  15:SourceFiles\asw/clock_statemachine.c **** 
+  16:SourceFiles\asw/clock_statemachine.c **** #define INVALIDINDEX -1
+  17:SourceFiles\asw/clock_statemachine.c **** 
+  18:SourceFiles\asw/clock_statemachine.c **** /*****************************************************************************/
+  19:SourceFiles\asw/clock_statemachine.c **** /* Function implementation - global ('extern') and local ('static')          */
+  20:SourceFiles\asw/clock_statemachine.c **** /*****************************************************************************/
+  21:SourceFiles\asw/clock_statemachine.c **** 
+  22:SourceFiles\asw/clock_statemachine.c **** 
+  23:SourceFiles\asw/clock_statemachine.c **** /** return the index of the provided state in the given table 
+  24:SourceFiles\asw/clock_statemachine.c ****  **/
+  25:SourceFiles\asw/clock_statemachine.c **** sint16_t STATE__getIndexCurrentState(   STATE_stateOuterTransitionTable_t const  transitionTable,
+  26:SourceFiles\asw/clock_statemachine.c ****                                         uint16_t transitionTableSize,
+  27:SourceFiles\asw/clock_statemachine.c ****                                         STATE_State_t state)
+  28:SourceFiles\asw/clock_statemachine.c **** {
+  28              		.loc 1 28 0
+  29              		.cfi_startproc
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 2
+
+
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  34 0000 30B4     		push	{r4, r5}
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 5, -4
+  38              	.LVL1:
+  39              	.LBB2:
+  29:SourceFiles\asw/clock_statemachine.c ****     
+  30:SourceFiles\asw/clock_statemachine.c ****     sint16_t result = INVALIDINDEX; //error
+  31:SourceFiles\asw/clock_statemachine.c ****     
+  32:SourceFiles\asw/clock_statemachine.c ****     for (uint16_t i = 0; i < transitionTableSize; i++)
+  40              		.loc 1 32 0
+  41 0002 0023     		movs	r3, #0
+  42 0004 09E0     		b	.L2
+  43              	.LVL2:
+  44              	.L5:
+  33:SourceFiles\asw/clock_statemachine.c ****     {
+  34:SourceFiles\asw/clock_statemachine.c ****         if (transitionTable[i].fromState == state)
+  45              		.loc 1 34 0
+  46 0006 03EB4305 		add	r5, r3, r3, lsl #1
+  47 000a AC00     		lsls	r4, r5, #2
+  48 000c 045D     		ldrb	r4, [r0, r4]	@ zero_extendqisi2
+  49 000e 9442     		cmp	r4, r2
+  50 0010 01D1     		bne	.L3
+  35:SourceFiles\asw/clock_statemachine.c ****         {
+  36:SourceFiles\asw/clock_statemachine.c ****             return i;
+  51              		.loc 1 36 0
+  52 0012 18B2     		sxth	r0, r3
+  53              	.LVL3:
+  54 0014 05E0     		b	.L4
+  55              	.LVL4:
+  56              	.L3:
+  32:SourceFiles\asw/clock_statemachine.c ****     {
+  57              		.loc 1 32 0 discriminator 2
+  58 0016 0133     		adds	r3, r3, #1
+  59              	.LVL5:
+  60 0018 9BB2     		uxth	r3, r3
+  61              	.LVL6:
+  62              	.L2:
+  32:SourceFiles\asw/clock_statemachine.c ****     {
+  63              		.loc 1 32 0 is_stmt 0 discriminator 1
+  64 001a 8B42     		cmp	r3, r1
+  65 001c F3D3     		bcc	.L5
+  66              	.LBE2:
+  37:SourceFiles\asw/clock_statemachine.c ****         }
+  38:SourceFiles\asw/clock_statemachine.c ****     }
+  39:SourceFiles\asw/clock_statemachine.c ****     
+  40:SourceFiles\asw/clock_statemachine.c ****     return INVALIDINDEX;
+  67              		.loc 1 40 0 is_stmt 1
+  68 001e 4FF0FF30 		mov	r0, #-1
+  69              	.LVL7:
+  70              	.L4:
+  41:SourceFiles\asw/clock_statemachine.c **** }
+  71              		.loc 1 41 0
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 3
+
+
+  72 0022 30BC     		pop	{r4, r5}
+  73              		.cfi_restore 5
+  74              		.cfi_restore 4
+  75              		.cfi_def_cfa_offset 0
+  76 0024 7047     		bx	lr
+  77              		.cfi_endproc
+  78              	.LFE110:
+  79              		.size	STATE__getIndexCurrentState, .-STATE__getIndexCurrentState
+  80 0026 00BF     		.section	.text.STATE_initState,"ax",%progbits
+  81              		.align	2
+  82              		.global	STATE_initState
+  83              		.thumb
+  84              		.thumb_func
+  85              		.type	STATE_initState, %function
+  86              	STATE_initState:
+  87              	.LFB111:
+  42:SourceFiles\asw/clock_statemachine.c **** 
+  43:SourceFiles\asw/clock_statemachine.c **** /**
+  44:SourceFiles\asw/clock_statemachine.c ****  * This function will initialise the state machine and process any state actions of the initial sta
+  45:SourceFiles\asw/clock_statemachine.c ****  * The state machine is implemented as a generic object, Several instances and configurations are s
+  46:SourceFiles\asw/clock_statemachine.c ****  * \param STATE_stateActionTable_t const * const actionTable            : IN - Pointer to the actio
+  47:SourceFiles\asw/clock_statemachine.c ****  * \param uint16_t actionTableSize                                      : IN - action table size 
+  48:SourceFiles\asw/clock_statemachine.c ****  * \param STATE_state_t state                                           : IN/OUT - Leaving and Resu
+  49:SourceFiles\asw/clock_statemachine.c ****  * \return RC_SUCCESS or error
+  50:SourceFiles\asw/clock_statemachine.c ****  */
+  51:SourceFiles\asw/clock_statemachine.c **** RC_t STATE_initState(   STATE_stateActionTable_t const actionTable, 
+  52:SourceFiles\asw/clock_statemachine.c ****                         uint16_t actionTableSize,
+  53:SourceFiles\asw/clock_statemachine.c ****                         STATE_State_t* state)
+  54:SourceFiles\asw/clock_statemachine.c **** {
+  88              		.loc 1 54 0
+  89              		.cfi_startproc
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92              	.LVL8:
+  55:SourceFiles\asw/clock_statemachine.c ****     
+  56:SourceFiles\asw/clock_statemachine.c ****     STATE_ActionPtr_t acEntry = 0;
+  57:SourceFiles\asw/clock_statemachine.c ****     
+  58:SourceFiles\asw/clock_statemachine.c ****     *state = STATE_CLOCK_C_ISDISPLAYING;
+  93              		.loc 1 58 0
+  94 0000 0023     		movs	r3, #0
+  95 0002 1370     		strb	r3, [r2]
+  59:SourceFiles\asw/clock_statemachine.c ****     
+  60:SourceFiles\asw/clock_statemachine.c ****     //Check if entry actios are present in the init state
+  61:SourceFiles\asw/clock_statemachine.c ****     if (0 != actionTable)
+  96              		.loc 1 61 0
+  97 0004 60B9     		cbnz	r0, .L12
+  98              	.LVL9:
+  62:SourceFiles\asw/clock_statemachine.c ****     {
+  63:SourceFiles\asw/clock_statemachine.c ****         for (uint16_t j = 0; j < actionTableSize; j++)
+  64:SourceFiles\asw/clock_statemachine.c ****         {
+  65:SourceFiles\asw/clock_statemachine.c **** 
+  66:SourceFiles\asw/clock_statemachine.c ****             if (STATE_CLOCK_C_ISDISPLAYING == actionTable[j].state)
+  67:SourceFiles\asw/clock_statemachine.c ****             {
+  68:SourceFiles\asw/clock_statemachine.c ****                 acEntry = actionTable[j].actionEntry;
+  69:SourceFiles\asw/clock_statemachine.c ****                 if (0 != acEntry) acEntry();
+  70:SourceFiles\asw/clock_statemachine.c ****             }
+  71:SourceFiles\asw/clock_statemachine.c ****         }
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 4
+
+
+  72:SourceFiles\asw/clock_statemachine.c ****     }
+  73:SourceFiles\asw/clock_statemachine.c ****     
+  74:SourceFiles\asw/clock_statemachine.c **** }
+  99              		.loc 1 74 0
+ 100 0006 7047     		bx	lr
+ 101              	.LVL10:
+ 102              	.L11:
+ 103              		.cfi_def_cfa_offset 16
+ 104              		.cfi_offset 4, -16
+ 105              		.cfi_offset 5, -12
+ 106              		.cfi_offset 6, -8
+ 107              		.cfi_offset 14, -4
+ 108              	.LBB3:
+  66:SourceFiles\asw/clock_statemachine.c ****             {
+ 109              		.loc 1 66 0
+ 110 0008 04EB4402 		add	r2, r4, r4, lsl #1
+ 111 000c 9300     		lsls	r3, r2, #2
+ 112 000e EA18     		adds	r2, r5, r3
+ 113 0010 EB5C     		ldrb	r3, [r5, r3]	@ zero_extendqisi2
+ 114 0012 13B9     		cbnz	r3, .L10
+  68:SourceFiles\asw/clock_statemachine.c ****                 if (0 != acEntry) acEntry();
+ 115              		.loc 1 68 0
+ 116 0014 5368     		ldr	r3, [r2, #4]
+ 117              	.LVL11:
+  69:SourceFiles\asw/clock_statemachine.c ****             }
+ 118              		.loc 1 69 0
+ 119 0016 03B1     		cbz	r3, .L10
+  69:SourceFiles\asw/clock_statemachine.c ****             }
+ 120              		.loc 1 69 0 is_stmt 0 discriminator 1
+ 121 0018 9847     		blx	r3
+ 122              	.LVL12:
+ 123              	.L10:
+  63:SourceFiles\asw/clock_statemachine.c ****         {
+ 124              		.loc 1 63 0 is_stmt 1 discriminator 2
+ 125 001a 0134     		adds	r4, r4, #1
+ 126              	.LVL13:
+ 127 001c A4B2     		uxth	r4, r4
+ 128              	.LVL14:
+ 129 001e 03E0     		b	.L8
+ 130              	.LVL15:
+ 131              	.L12:
+ 132              		.cfi_def_cfa_offset 0
+ 133              		.cfi_restore 4
+ 134              		.cfi_restore 5
+ 135              		.cfi_restore 6
+ 136              		.cfi_restore 14
+ 137              	.LBE3:
+  54:SourceFiles\asw/clock_statemachine.c ****     
+ 138              		.loc 1 54 0
+ 139 0020 70B5     		push	{r4, r5, r6, lr}
+ 140              		.cfi_def_cfa_offset 16
+ 141              		.cfi_offset 4, -16
+ 142              		.cfi_offset 5, -12
+ 143              		.cfi_offset 6, -8
+ 144              		.cfi_offset 14, -4
+ 145 0022 0546     		mov	r5, r0
+ 146 0024 0E46     		mov	r6, r1
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 5
+
+
+ 147 0026 0024     		movs	r4, #0
+ 148              	.LVL16:
+ 149              	.L8:
+ 150              	.LBB4:
+  63:SourceFiles\asw/clock_statemachine.c ****         {
+ 151              		.loc 1 63 0 discriminator 1
+ 152 0028 B442     		cmp	r4, r6
+ 153 002a EDD3     		bcc	.L11
+ 154              	.LBE4:
+ 155              		.loc 1 74 0
+ 156 002c 70BD     		pop	{r4, r5, r6, pc}
+ 157              		.cfi_endproc
+ 158              	.LFE111:
+ 159              		.size	STATE_initState, .-STATE_initState
+ 160 002e 00BF     		.section	.text.STATE_processEvent,"ax",%progbits
+ 161              		.align	2
+ 162              		.global	STATE_processEvent
+ 163              		.thumb
+ 164              		.thumb_func
+ 165              		.type	STATE_processEvent, %function
+ 166              	STATE_processEvent:
+ 167              	.LFB112:
+  75:SourceFiles\asw/clock_statemachine.c **** 
+  76:SourceFiles\asw/clock_statemachine.c **** /**
+  77:SourceFiles\asw/clock_statemachine.c ****  * This function will process the event with the defined state machine
+  78:SourceFiles\asw/clock_statemachine.c ****  * The state machine is implemented as a generic object, Several instances and configurations are s
+  79:SourceFiles\asw/clock_statemachine.c ****  * \param STATE_stateTransitionTable_t const * const transitionTable    : IN - Pointer to the trans
+  80:SourceFiles\asw/clock_statemachine.c ****  * \param uint16_t transitionTableSize                                  : IN - transition table siz
+  81:SourceFiles\asw/clock_statemachine.c ****  * \param STATE_stateActionTable_t const * const actionTable            : IN - Pointer to the actio
+  82:SourceFiles\asw/clock_statemachine.c ****  * \param uint16_t actionTableSize                                      : IN - action table size 
+  83:SourceFiles\asw/clock_statemachine.c ****  * \param STATE_event_t ev                                              : IN - Event to be processe
+  84:SourceFiles\asw/clock_statemachine.c ****  * \param STATE_state_t state                                           : IN/OUT - Leaving and Resu
+  85:SourceFiles\asw/clock_statemachine.c ****  * \return RC_SUCCESS or error
+  86:SourceFiles\asw/clock_statemachine.c ****  */
+  87:SourceFiles\asw/clock_statemachine.c **** RC_t STATE_processEvent(STATE_stateOuterTransitionTable_t const  transitionTable,
+  88:SourceFiles\asw/clock_statemachine.c ****                         uint16_t transitionTableSize,
+  89:SourceFiles\asw/clock_statemachine.c ****                         STATE_stateActionTable_t const actionTable, 
+  90:SourceFiles\asw/clock_statemachine.c ****                         uint16_t actionTableSize,
+  91:SourceFiles\asw/clock_statemachine.c ****                         STATE_Event_t ev,
+  92:SourceFiles\asw/clock_statemachine.c ****                         STATE_State_t* state)
+  93:SourceFiles\asw/clock_statemachine.c **** {
+ 168              		.loc 1 93 0
+ 169              		.cfi_startproc
+ 170              		@ args = 8, pretend = 0, frame = 0
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172              	.LVL17:
+ 173 0000 2DE9F84F 		push	{r3, r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 174              		.cfi_def_cfa_offset 40
+ 175              		.cfi_offset 3, -40
+ 176              		.cfi_offset 4, -36
+ 177              		.cfi_offset 5, -32
+ 178              		.cfi_offset 6, -28
+ 179              		.cfi_offset 7, -24
+ 180              		.cfi_offset 8, -20
+ 181              		.cfi_offset 9, -16
+ 182              		.cfi_offset 10, -12
+ 183              		.cfi_offset 11, -8
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 6
+
+
+ 184              		.cfi_offset 14, -4
+ 185 0004 0446     		mov	r4, r0
+ 186 0006 9146     		mov	r9, r2
+ 187 0008 9A46     		mov	r10, r3
+ 188 000a 9DF82880 		ldrb	r8, [sp, #40]	@ zero_extendqisi2
+ 189              	.LVL18:
+  94:SourceFiles\asw/clock_statemachine.c ****     STATE_GuardPtr_t    guard = 0;
+  95:SourceFiles\asw/clock_statemachine.c ****     STATE_ActionPtr_t   acTransition = 0;
+  96:SourceFiles\asw/clock_statemachine.c ****     STATE_ActionPtr_t   acEntry = 0;
+  97:SourceFiles\asw/clock_statemachine.c ****     STATE_ActionPtr_t   acExit = 0;
+  98:SourceFiles\asw/clock_statemachine.c ****     
+  99:SourceFiles\asw/clock_statemachine.c ****     
+ 100:SourceFiles\asw/clock_statemachine.c ****     //Read the state from the watchdog object;
+ 101:SourceFiles\asw/clock_statemachine.c ****     STATE_State_t currentState = *state;
+ 190              		.loc 1 101 0
+ 191 000e 0B9B     		ldr	r3, [sp, #44]
+ 192              	.LVL19:
+ 193 0010 93F800B0 		ldrb	fp, [r3]	@ zero_extendqisi2
+ 194              	.LVL20:
+ 102:SourceFiles\asw/clock_statemachine.c ****     STATE_State_t toState = currentState; //Just in case
+ 103:SourceFiles\asw/clock_statemachine.c ****     
+ 104:SourceFiles\asw/clock_statemachine.c ****     //Calculate the table index of the outer table
+ 105:SourceFiles\asw/clock_statemachine.c **** 
+ 106:SourceFiles\asw/clock_statemachine.c ****     sint16_t index = STATE__getIndexCurrentState(transitionTable, transitionTableSize, currentState
+ 195              		.loc 1 106 0
+ 196 0014 5A46     		mov	r2, fp
+ 197              	.LVL21:
+ 198 0016 FFF7FEFF 		bl	STATE__getIndexCurrentState
+ 199              	.LVL22:
+ 107:SourceFiles\asw/clock_statemachine.c ****     
+ 108:SourceFiles\asw/clock_statemachine.c ****     //This should never happen
+ 109:SourceFiles\asw/clock_statemachine.c ****     if (INVALIDINDEX == index)
+ 200              		.loc 1 109 0
+ 201 001a B0F1FF3F 		cmp	r0, #-1
+ 202 001e 60D0     		beq	.L30
+ 110:SourceFiles\asw/clock_statemachine.c ****     {
+ 111:SourceFiles\asw/clock_statemachine.c ****         return RC_ERROR_BAD_PARAM;
+ 112:SourceFiles\asw/clock_statemachine.c ****     }
+ 113:SourceFiles\asw/clock_statemachine.c ****     
+ 114:SourceFiles\asw/clock_statemachine.c ****     STATE_stateInnerTransitionTable_t const* const pInnerTable = transitionTable[index].pInnerTrans
+ 203              		.loc 1 114 0
+ 204 0020 00EB4000 		add	r0, r0, r0, lsl #1
+ 205              	.LVL23:
+ 206 0024 8300     		lsls	r3, r0, #2
+ 207 0026 1C44     		add	r4, r4, r3
+ 208              	.LVL24:
+ 209 0028 6568     		ldr	r5, [r4, #4]
+ 210              	.LVL25:
+ 115:SourceFiles\asw/clock_statemachine.c **** 	
+ 116:SourceFiles\asw/clock_statemachine.c ****     uint16_t innerTableSize = 0;
+ 117:SourceFiles\asw/clock_statemachine.c **** 	if (0 != pInnerTable)
+ 211              		.loc 1 117 0
+ 212 002a 0DB1     		cbz	r5, .L31
+ 118:SourceFiles\asw/clock_statemachine.c **** 	{
+ 119:SourceFiles\asw/clock_statemachine.c **** 		innerTableSize = transitionTable[index].size;
+ 213              		.loc 1 119 0
+ 214 002c 2689     		ldrh	r6, [r4, #8]
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 7
+
+
+ 215              	.LVL26:
+ 216 002e 00E0     		b	.L16
+ 217              	.LVL27:
+ 218              	.L31:
+ 116:SourceFiles\asw/clock_statemachine.c **** 	if (0 != pInnerTable)
+ 219              		.loc 1 116 0
+ 220 0030 0026     		movs	r6, #0
+ 221              	.LVL28:
+ 222              	.L16:
+ 120:SourceFiles\asw/clock_statemachine.c **** 	}
+ 121:SourceFiles\asw/clock_statemachine.c ****     
+ 122:SourceFiles\asw/clock_statemachine.c ****     if (0 == pInnerTable || 0 == innerTableSize)
+ 223              		.loc 1 122 0
+ 224 0032 002D     		cmp	r5, #0
+ 225 0034 59D0     		beq	.L32
+ 226              		.loc 1 122 0 is_stmt 0 discriminator 1
+ 227 0036 002E     		cmp	r6, #0
+ 228 0038 5BD0     		beq	.L33
+ 229 003a 0024     		movs	r4, #0
+ 230 003c 4CE0     		b	.L17
+ 231              	.LVL29:
+ 232              	.L29:
+ 233              	.LBB5:
+ 123:SourceFiles\asw/clock_statemachine.c ****     {
+ 124:SourceFiles\asw/clock_statemachine.c ****         //No transitions in this state
+ 125:SourceFiles\asw/clock_statemachine.c ****         return RC_ERROR_INVALID_STATE;
+ 126:SourceFiles\asw/clock_statemachine.c ****     }
+ 127:SourceFiles\asw/clock_statemachine.c ****     
+ 128:SourceFiles\asw/clock_statemachine.c ****     //Iterate through the inner table and find correct transition
+ 129:SourceFiles\asw/clock_statemachine.c ****     for (uint16_t i = 0; i < innerTableSize; i++)
+ 130:SourceFiles\asw/clock_statemachine.c ****     {
+ 131:SourceFiles\asw/clock_statemachine.c ****         if ((*pInnerTable)[i].event == ev)
+ 234              		.loc 1 131 0 is_stmt 1
+ 235 003e 2746     		mov	r7, r4
+ 236 0040 04EB4402 		add	r2, r4, r4, lsl #1
+ 237 0044 9300     		lsls	r3, r2, #2
+ 238 0046 EB5C     		ldrb	r3, [r5, r3]	@ zero_extendqisi2
+ 239 0048 4345     		cmp	r3, r8
+ 240 004a 43D1     		bne	.L18
+ 132:SourceFiles\asw/clock_statemachine.c ****         {
+ 133:SourceFiles\asw/clock_statemachine.c ****             //Transition found, let's check the guard
+ 134:SourceFiles\asw/clock_statemachine.c ****             guard = (*pInnerTable)[i].guard;
+ 241              		.loc 1 134 0
+ 242 004c 04EB4402 		add	r2, r4, r4, lsl #1
+ 243 0050 9300     		lsls	r3, r2, #2
+ 244 0052 2B44     		add	r3, r3, r5
+ 245 0054 5B68     		ldr	r3, [r3, #4]
+ 246              	.LVL30:
+ 135:SourceFiles\asw/clock_statemachine.c ****             if (0 == guard || TRUE == guard())
+ 247              		.loc 1 135 0
+ 248 0056 13B1     		cbz	r3, .L19
+ 249              		.loc 1 135 0 is_stmt 0 discriminator 1
+ 250 0058 9847     		blx	r3
+ 251              	.LVL31:
+ 252 005a 0128     		cmp	r0, #1
+ 253 005c 3AD1     		bne	.L18
+ 254              	.L19:
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 8
+
+
+ 136:SourceFiles\asw/clock_statemachine.c ****             {
+ 137:SourceFiles\asw/clock_statemachine.c ****                 //Transition is valid
+ 138:SourceFiles\asw/clock_statemachine.c ****                 acTransition = (*pInnerTable)[i].actionTransition;
+ 255              		.loc 1 138 0 is_stmt 1
+ 256 005e 7A00     		lsls	r2, r7, #1
+ 257 0060 D119     		adds	r1, r2, r7
+ 258 0062 8B00     		lsls	r3, r1, #2
+ 259 0064 1946     		mov	r1, r3
+ 260 0066 2B44     		add	r3, r3, r5
+ 261 0068 9C68     		ldr	r4, [r3, #8]
+ 262              	.LVL32:
+ 139:SourceFiles\asw/clock_statemachine.c ****                 toState = (*pInnerTable)[i].toState;
+ 263              		.loc 1 139 0
+ 264 006a 0D44     		add	r5, r5, r1
+ 265              	.LVL33:
+ 266 006c 6E78     		ldrb	r6, [r5, #1]	@ zero_extendqisi2
+ 267              	.LVL34:
+ 140:SourceFiles\asw/clock_statemachine.c ****                 
+ 141:SourceFiles\asw/clock_statemachine.c ****                 //Now lets find exit actions. Note: their might be more than one
+ 142:SourceFiles\asw/clock_statemachine.c ****                 if (0 != actionTable)
+ 268              		.loc 1 142 0
+ 269 006e B9F1000F 		cmp	r9, #0
+ 270 0072 0FD1     		bne	.L34
+ 271              	.LBB6:
+ 272 0074 11E0     		b	.L21
+ 273              	.LVL35:
+ 274              	.L23:
+ 143:SourceFiles\asw/clock_statemachine.c ****                 {
+ 144:SourceFiles\asw/clock_statemachine.c ****                     for (uint16_t j = 0; j < actionTableSize; j++)
+ 145:SourceFiles\asw/clock_statemachine.c ****                     {
+ 146:SourceFiles\asw/clock_statemachine.c ****                         if (currentState == actionTable[j].state)
+ 275              		.loc 1 146 0
+ 276 0076 05EB4502 		add	r2, r5, r5, lsl #1
+ 277 007a 9300     		lsls	r3, r2, #2
+ 278 007c 09EB0302 		add	r2, r9, r3
+ 279 0080 19F80330 		ldrb	r3, [r9, r3]	@ zero_extendqisi2
+ 280 0084 9B45     		cmp	fp, r3
+ 281 0086 02D1     		bne	.L22
+ 147:SourceFiles\asw/clock_statemachine.c ****                         {
+ 148:SourceFiles\asw/clock_statemachine.c ****                             acExit = actionTable[j].actionExit;
+ 282              		.loc 1 148 0
+ 283 0088 9368     		ldr	r3, [r2, #8]
+ 284              	.LVL36:
+ 149:SourceFiles\asw/clock_statemachine.c ****                             if (0 != acExit) acExit();
+ 285              		.loc 1 149 0
+ 286 008a 03B1     		cbz	r3, .L22
+ 287              		.loc 1 149 0 is_stmt 0 discriminator 1
+ 288 008c 9847     		blx	r3
+ 289              	.LVL37:
+ 290              	.L22:
+ 144:SourceFiles\asw/clock_statemachine.c ****                     {
+ 291              		.loc 1 144 0 is_stmt 1 discriminator 2
+ 292 008e 0135     		adds	r5, r5, #1
+ 293              	.LVL38:
+ 294 0090 ADB2     		uxth	r5, r5
+ 295              	.LVL39:
+ 296 0092 00E0     		b	.L20
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 9
+
+
+ 297              	.LVL40:
+ 298              	.L34:
+ 299              	.LBE6:
+ 300 0094 0025     		movs	r5, #0
+ 301              	.LVL41:
+ 302              	.L20:
+ 303              	.LBB7:
+ 144:SourceFiles\asw/clock_statemachine.c ****                     {
+ 304              		.loc 1 144 0 is_stmt 0 discriminator 1
+ 305 0096 5545     		cmp	r5, r10
+ 306 0098 EDD3     		bcc	.L23
+ 307              	.LVL42:
+ 308              	.L21:
+ 309              	.LBE7:
+ 150:SourceFiles\asw/clock_statemachine.c ****                         }
+ 151:SourceFiles\asw/clock_statemachine.c ****                     }
+ 152:SourceFiles\asw/clock_statemachine.c ****                 }
+ 153:SourceFiles\asw/clock_statemachine.c **** 
+ 154:SourceFiles\asw/clock_statemachine.c ****                 //Lets call the transition action
+ 155:SourceFiles\asw/clock_statemachine.c ****                 if (0 != acTransition) acTransition();
+ 310              		.loc 1 155 0 is_stmt 1
+ 311 009a 04B1     		cbz	r4, .L24
+ 312              		.loc 1 155 0 is_stmt 0 discriminator 1
+ 313 009c A047     		blx	r4
+ 314              	.LVL43:
+ 315              	.L24:
+ 156:SourceFiles\asw/clock_statemachine.c ****                 
+ 157:SourceFiles\asw/clock_statemachine.c ****                 //Now lets find the entry actions. Note: their might be more than one
+ 158:SourceFiles\asw/clock_statemachine.c ****                 if (0 != actionTable)
+ 316              		.loc 1 158 0 is_stmt 1
+ 317 009e B9F1000F 		cmp	r9, #0
+ 318 00a2 0FD1     		bne	.L35
+ 319              	.LBB8:
+ 320 00a4 11E0     		b	.L26
+ 321              	.LVL44:
+ 322              	.L28:
+ 159:SourceFiles\asw/clock_statemachine.c ****                 {
+ 160:SourceFiles\asw/clock_statemachine.c ****                     for (uint16_t j = 0; j < actionTableSize; j++)
+ 161:SourceFiles\asw/clock_statemachine.c ****                     {
+ 162:SourceFiles\asw/clock_statemachine.c **** 
+ 163:SourceFiles\asw/clock_statemachine.c ****                         if (toState == actionTable[j].state)
+ 323              		.loc 1 163 0
+ 324 00a6 04EB4402 		add	r2, r4, r4, lsl #1
+ 325 00aa 9300     		lsls	r3, r2, #2
+ 326 00ac 09EB0302 		add	r2, r9, r3
+ 327 00b0 19F80330 		ldrb	r3, [r9, r3]	@ zero_extendqisi2
+ 328 00b4 9E42     		cmp	r6, r3
+ 329 00b6 02D1     		bne	.L27
+ 164:SourceFiles\asw/clock_statemachine.c ****                         {
+ 165:SourceFiles\asw/clock_statemachine.c ****                             acEntry = actionTable[j].actionEntry;
+ 330              		.loc 1 165 0
+ 331 00b8 5368     		ldr	r3, [r2, #4]
+ 332              	.LVL45:
+ 166:SourceFiles\asw/clock_statemachine.c ****                             if (0 != acEntry) acEntry();
+ 333              		.loc 1 166 0
+ 334 00ba 03B1     		cbz	r3, .L27
+ 335              		.loc 1 166 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 10
+
+
+ 336 00bc 9847     		blx	r3
+ 337              	.LVL46:
+ 338              	.L27:
+ 160:SourceFiles\asw/clock_statemachine.c ****                     {
+ 339              		.loc 1 160 0 is_stmt 1 discriminator 2
+ 340 00be 0134     		adds	r4, r4, #1
+ 341              	.LVL47:
+ 342 00c0 A4B2     		uxth	r4, r4
+ 343              	.LVL48:
+ 344 00c2 00E0     		b	.L25
+ 345              	.LVL49:
+ 346              	.L35:
+ 347              	.LBE8:
+ 348 00c4 0024     		movs	r4, #0
+ 349              	.LVL50:
+ 350              	.L25:
+ 351              	.LBB9:
+ 160:SourceFiles\asw/clock_statemachine.c ****                     {
+ 352              		.loc 1 160 0 is_stmt 0 discriminator 1
+ 353 00c6 5445     		cmp	r4, r10
+ 354 00c8 EDD3     		bcc	.L28
+ 355              	.LVL51:
+ 356              	.L26:
+ 357              	.LBE9:
+ 167:SourceFiles\asw/clock_statemachine.c ****                         }
+ 168:SourceFiles\asw/clock_statemachine.c ****                     }
+ 169:SourceFiles\asw/clock_statemachine.c ****                 }
+ 170:SourceFiles\asw/clock_statemachine.c ****                 
+ 171:SourceFiles\asw/clock_statemachine.c ****                 *state = toState;
+ 358              		.loc 1 171 0 is_stmt 1
+ 359 00ca 0B9B     		ldr	r3, [sp, #44]
+ 360 00cc 1E70     		strb	r6, [r3]
+ 361              	.LBE5:
+ 172:SourceFiles\asw/clock_statemachine.c ****                 
+ 173:SourceFiles\asw/clock_statemachine.c ****                 //Only one transition will be fired
+ 174:SourceFiles\asw/clock_statemachine.c ****                 break;
+ 175:SourceFiles\asw/clock_statemachine.c ****             }
+ 176:SourceFiles\asw/clock_statemachine.c ****         }
+ 177:SourceFiles\asw/clock_statemachine.c ****     }
+ 178:SourceFiles\asw/clock_statemachine.c ****     
+ 179:SourceFiles\asw/clock_statemachine.c ****     return RC_SUCCESS;
+ 362              		.loc 1 179 0
+ 363 00ce 0020     		movs	r0, #0
+ 364              	.LBB10:
+ 174:SourceFiles\asw/clock_statemachine.c ****             }
+ 365              		.loc 1 174 0
+ 366 00d0 BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 367              	.LVL52:
+ 368              	.L18:
+ 129:SourceFiles\asw/clock_statemachine.c ****     {
+ 369              		.loc 1 129 0 discriminator 2
+ 370 00d4 0134     		adds	r4, r4, #1
+ 371              	.LVL53:
+ 372 00d6 A4B2     		uxth	r4, r4
+ 373              	.LVL54:
+ 374              	.L17:
+ 129:SourceFiles\asw/clock_statemachine.c ****     {
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 11
+
+
+ 375              		.loc 1 129 0 is_stmt 0 discriminator 1
+ 376 00d8 A642     		cmp	r6, r4
+ 377 00da B0D8     		bhi	.L29
+ 378              	.LBE10:
+ 379              		.loc 1 179 0 is_stmt 1
+ 380 00dc 0020     		movs	r0, #0
+ 381              	.LBB11:
+ 382 00de BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 383              	.LVL55:
+ 384              	.L30:
+ 385              	.LBE11:
+ 111:SourceFiles\asw/clock_statemachine.c ****     }
+ 386              		.loc 1 111 0
+ 387 00e2 6FF01300 		mvn	r0, #19
+ 388              	.LVL56:
+ 389 00e6 BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 390              	.LVL57:
+ 391              	.L32:
+ 125:SourceFiles\asw/clock_statemachine.c ****     }
+ 392              		.loc 1 125 0
+ 393 00ea 6FF01600 		mvn	r0, #22
+ 394 00ee BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 395              	.LVL58:
+ 396              	.L33:
+ 397 00f2 6FF01600 		mvn	r0, #22
+ 180:SourceFiles\asw/clock_statemachine.c **** }
+ 398              		.loc 1 180 0
+ 399 00f6 BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 400              		.cfi_endproc
+ 401              	.LFE112:
+ 402              		.size	STATE_processEvent, .-STATE_processEvent
+ 403 00fa 00BF     		.text
+ 404              	.Letext0:
+ 405              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 406              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 407              		.file 4 "Generated_Source\\PSoC5/ErikaOS_common_ee_types.inc"
+ 408              		.file 5 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc"
+ 409              		.file 6 ".\\SourceFiles\\bsw/global.h"
+ 410              		.file 7 "SourceFiles\\asw\\clock_statemachine_cfg.h"
+ 411              		.file 8 "SourceFiles\\asw\\clock_statemachine.h"
+ 412              		.file 9 "Generated_Source\\PSoC5/ErikaOS_ee_oo_intfunc.inc"
+ 413              		.file 10 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_context.inc"
+ 414              		.file 11 "Generated_Source\\PSoC5/ErikaOS_common_ee_primitives.inc"
+ 415              		.file 12 "Generated_Source\\PSoC5/core_cm3.h"
+ 416              		.section	.debug_info,"",%progbits
+ 417              	.Ldebug_info0:
+ 418 0000 D1050000 		.4byte	0x5d1
+ 419 0004 0400     		.2byte	0x4
+ 420 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 421 000a 04       		.byte	0x4
+ 422 000b 01       		.uleb128 0x1
+ 423 000c 1B040000 		.4byte	.LASF105
+ 424 0010 0C       		.byte	0xc
+ 425 0011 6B010000 		.4byte	.LASF106
+ 426 0015 1C060000 		.4byte	.LASF107
+ 427 0019 68000000 		.4byte	.Ldebug_ranges0+0x68
+ 428 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 12
+
+
+ 429 0021 00000000 		.4byte	.Ldebug_line0
+ 430 0025 02       		.uleb128 0x2
+ 431 0026 01       		.byte	0x1
+ 432 0027 06       		.byte	0x6
+ 433 0028 4E030000 		.4byte	.LASF0
+ 434 002c 02       		.uleb128 0x2
+ 435 002d 01       		.byte	0x1
+ 436 002e 08       		.byte	0x8
+ 437 002f 19030000 		.4byte	.LASF1
+ 438 0033 02       		.uleb128 0x2
+ 439 0034 02       		.byte	0x2
+ 440 0035 05       		.byte	0x5
+ 441 0036 7B000000 		.4byte	.LASF2
+ 442 003a 03       		.uleb128 0x3
+ 443 003b 05010000 		.4byte	.LASF4
+ 444 003f 02       		.byte	0x2
+ 445 0040 2B       		.byte	0x2b
+ 446 0041 45000000 		.4byte	0x45
+ 447 0045 02       		.uleb128 0x2
+ 448 0046 02       		.byte	0x2
+ 449 0047 07       		.byte	0x7
+ 450 0048 18050000 		.4byte	.LASF3
+ 451 004c 03       		.uleb128 0x3
+ 452 004d E3050000 		.4byte	.LASF5
+ 453 0051 02       		.byte	0x2
+ 454 0052 3F       		.byte	0x3f
+ 455 0053 57000000 		.4byte	0x57
+ 456 0057 02       		.uleb128 0x2
+ 457 0058 04       		.byte	0x4
+ 458 0059 05       		.byte	0x5
+ 459 005a 74020000 		.4byte	.LASF6
+ 460 005e 02       		.uleb128 0x2
+ 461 005f 04       		.byte	0x4
+ 462 0060 07       		.byte	0x7
+ 463 0061 95030000 		.4byte	.LASF7
+ 464 0065 02       		.uleb128 0x2
+ 465 0066 08       		.byte	0x8
+ 466 0067 05       		.byte	0x5
+ 467 0068 0C020000 		.4byte	.LASF8
+ 468 006c 02       		.uleb128 0x2
+ 469 006d 08       		.byte	0x8
+ 470 006e 07       		.byte	0x7
+ 471 006f 5A030000 		.4byte	.LASF9
+ 472 0073 04       		.uleb128 0x4
+ 473 0074 04       		.byte	0x4
+ 474 0075 05       		.byte	0x5
+ 475 0076 696E7400 		.ascii	"int\000"
+ 476 007a 02       		.uleb128 0x2
+ 477 007b 04       		.byte	0x4
+ 478 007c 07       		.byte	0x7
+ 479 007d 71030000 		.4byte	.LASF10
+ 480 0081 03       		.uleb128 0x3
+ 481 0082 8C030000 		.4byte	.LASF11
+ 482 0086 03       		.byte	0x3
+ 483 0087 24       		.byte	0x24
+ 484 0088 3A000000 		.4byte	0x3a
+ 485 008c 03       		.uleb128 0x3
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 13
+
+
+ 486 008d 03050000 		.4byte	.LASF12
+ 487 0091 03       		.byte	0x3
+ 488 0092 2C       		.byte	0x2c
+ 489 0093 4C000000 		.4byte	0x4c
+ 490 0097 02       		.uleb128 0x2
+ 491 0098 04       		.byte	0x4
+ 492 0099 04       		.byte	0x4
+ 493 009a ED010000 		.4byte	.LASF13
+ 494 009e 02       		.uleb128 0x2
+ 495 009f 08       		.byte	0x8
+ 496 00a0 04       		.byte	0x4
+ 497 00a1 A0050000 		.4byte	.LASF14
+ 498 00a5 02       		.uleb128 0x2
+ 499 00a6 01       		.byte	0x1
+ 500 00a7 08       		.byte	0x8
+ 501 00a8 D6040000 		.4byte	.LASF15
+ 502 00ac 02       		.uleb128 0x2
+ 503 00ad 08       		.byte	0x8
+ 504 00ae 04       		.byte	0x4
+ 505 00af 0D030000 		.4byte	.LASF16
+ 506 00b3 03       		.uleb128 0x3
+ 507 00b4 C5030000 		.4byte	.LASF17
+ 508 00b8 04       		.byte	0x4
+ 509 00b9 53       		.byte	0x53
+ 510 00ba 73000000 		.4byte	0x73
+ 511 00be 03       		.uleb128 0x3
+ 512 00bf FB000000 		.4byte	.LASF18
+ 513 00c3 04       		.byte	0x4
+ 514 00c4 54       		.byte	0x54
+ 515 00c5 7A000000 		.4byte	0x7a
+ 516 00c9 03       		.uleb128 0x3
+ 517 00ca C2050000 		.4byte	.LASF19
+ 518 00ce 05       		.byte	0x5
+ 519 00cf 4D       		.byte	0x4d
+ 520 00d0 BE000000 		.4byte	0xbe
+ 521 00d4 03       		.uleb128 0x3
+ 522 00d5 D7000000 		.4byte	.LASF20
+ 523 00d9 05       		.byte	0x5
+ 524 00da 4F       		.byte	0x4f
+ 525 00db BE000000 		.4byte	0xbe
+ 526 00df 03       		.uleb128 0x3
+ 527 00e0 2B010000 		.4byte	.LASF21
+ 528 00e4 05       		.byte	0x5
+ 529 00e5 78       		.byte	0x78
+ 530 00e6 B3000000 		.4byte	0xb3
+ 531 00ea 02       		.uleb128 0x2
+ 532 00eb 04       		.byte	0x4
+ 533 00ec 07       		.byte	0x7
+ 534 00ed AB000000 		.4byte	.LASF22
+ 535 00f1 03       		.uleb128 0x3
+ 536 00f2 6B020000 		.4byte	.LASF23
+ 537 00f6 06       		.byte	0x6
+ 538 00f7 92       		.byte	0x92
+ 539 00f8 33000000 		.4byte	0x33
+ 540 00fc 03       		.uleb128 0x3
+ 541 00fd FD020000 		.4byte	.LASF24
+ 542 0101 06       		.byte	0x6
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 14
+
+
+ 543 0102 9C       		.byte	0x9c
+ 544 0103 2C000000 		.4byte	0x2c
+ 545 0107 05       		.uleb128 0x5
+ 546 0108 01       		.byte	0x1
+ 547 0109 25000000 		.4byte	0x25
+ 548 010d 06       		.byte	0x6
+ 549 010e CF       		.byte	0xcf
+ 550 010f B0010000 		.4byte	0x1b0
+ 551 0113 06       		.uleb128 0x6
+ 552 0114 2D000000 		.4byte	.LASF25
+ 553 0118 00       		.byte	0
+ 554 0119 07       		.uleb128 0x7
+ 555 011a AB060000 		.4byte	.LASF26
+ 556 011e 7F       		.sleb128 -1
+ 557 011f 07       		.uleb128 0x7
+ 558 0120 A7030000 		.4byte	.LASF27
+ 559 0124 7E       		.sleb128 -2
+ 560 0125 07       		.uleb128 0x7
+ 561 0126 C9000000 		.4byte	.LASF28
+ 562 012a 7D       		.sleb128 -3
+ 563 012b 07       		.uleb128 0x7
+ 564 012c B4060000 		.4byte	.LASF29
+ 565 0130 7C       		.sleb128 -4
+ 566 0131 07       		.uleb128 0x7
+ 567 0132 CC010000 		.4byte	.LASF30
+ 568 0136 7B       		.sleb128 -5
+ 569 0137 07       		.uleb128 0x7
+ 570 0138 85000000 		.4byte	.LASF31
+ 571 013c 7A       		.sleb128 -6
+ 572 013d 07       		.uleb128 0x7
+ 573 013e 7D020000 		.4byte	.LASF32
+ 574 0142 79       		.sleb128 -7
+ 575 0143 07       		.uleb128 0x7
+ 576 0144 EE040000 		.4byte	.LASF33
+ 577 0148 78       		.sleb128 -8
+ 578 0149 07       		.uleb128 0x7
+ 579 014a 08070000 		.4byte	.LASF34
+ 580 014e 77       		.sleb128 -9
+ 581 014f 07       		.uleb128 0x7
+ 582 0150 C1020000 		.4byte	.LASF35
+ 583 0154 76       		.sleb128 -10
+ 584 0155 07       		.uleb128 0x7
+ 585 0156 23070000 		.4byte	.LASF36
+ 586 015a 75       		.sleb128 -11
+ 587 015b 07       		.uleb128 0x7
+ 588 015c 7E030000 		.4byte	.LASF37
+ 589 0160 74       		.sleb128 -12
+ 590 0161 07       		.uleb128 0x7
+ 591 0162 B0050000 		.4byte	.LASF38
+ 592 0166 73       		.sleb128 -13
+ 593 0167 07       		.uleb128 0x7
+ 594 0168 1A000000 		.4byte	.LASF39
+ 595 016c 72       		.sleb128 -14
+ 596 016d 07       		.uleb128 0x7
+ 597 016e 61000000 		.4byte	.LASF40
+ 598 0172 71       		.sleb128 -15
+ 599 0173 07       		.uleb128 0x7
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 15
+
+
+ 600 0174 DA020000 		.4byte	.LASF41
+ 601 0178 70       		.sleb128 -16
+ 602 0179 07       		.uleb128 0x7
+ 603 017a DF000000 		.4byte	.LASF42
+ 604 017e 6F       		.sleb128 -17
+ 605 017f 07       		.uleb128 0x7
+ 606 0180 96000000 		.4byte	.LASF43
+ 607 0184 6E       		.sleb128 -18
+ 608 0185 07       		.uleb128 0x7
+ 609 0186 47020000 		.4byte	.LASF44
+ 610 018a 6D       		.sleb128 -19
+ 611 018b 07       		.uleb128 0x7
+ 612 018c 49050000 		.4byte	.LASF45
+ 613 0190 6C       		.sleb128 -20
+ 614 0191 07       		.uleb128 0x7
+ 615 0192 EB020000 		.4byte	.LASF46
+ 616 0196 6B       		.sleb128 -21
+ 617 0197 07       		.uleb128 0x7
+ 618 0198 73060000 		.4byte	.LASF47
+ 619 019c 6A       		.sleb128 -22
+ 620 019d 07       		.uleb128 0x7
+ 621 019e 54010000 		.4byte	.LASF48
+ 622 01a2 69       		.sleb128 -23
+ 623 01a3 07       		.uleb128 0x7
+ 624 01a4 5A020000 		.4byte	.LASF49
+ 625 01a8 68       		.sleb128 -24
+ 626 01a9 07       		.uleb128 0x7
+ 627 01aa F3010000 		.4byte	.LASF50
+ 628 01ae 67       		.sleb128 -25
+ 629 01af 00       		.byte	0
+ 630 01b0 03       		.uleb128 0x3
+ 631 01b1 1E070000 		.4byte	.LASF51
+ 632 01b5 06       		.byte	0x6
+ 633 01b6 EA       		.byte	0xea
+ 634 01b7 07010000 		.4byte	0x107
+ 635 01bb 05       		.uleb128 0x5
+ 636 01bc 01       		.byte	0x1
+ 637 01bd 2C000000 		.4byte	0x2c
+ 638 01c1 07       		.byte	0x7
+ 639 01c2 0F       		.byte	0xf
+ 640 01c3 EC010000 		.4byte	0x1ec
+ 641 01c7 06       		.uleb128 0x6
+ 642 01c8 10010000 		.4byte	.LASF52
+ 643 01cc 00       		.byte	0
+ 644 01cd 06       		.uleb128 0x6
+ 645 01ce FC030000 		.4byte	.LASF53
+ 646 01d2 01       		.byte	0x1
+ 647 01d3 06       		.uleb128 0x6
+ 648 01d4 CE030000 		.4byte	.LASF54
+ 649 01d8 02       		.byte	0x2
+ 650 01d9 06       		.uleb128 0x6
+ 651 01da 98010000 		.4byte	.LASF55
+ 652 01de 03       		.byte	0x3
+ 653 01df 06       		.uleb128 0x6
+ 654 01e0 E8060000 		.4byte	.LASF56
+ 655 01e4 04       		.byte	0x4
+ 656 01e5 06       		.uleb128 0x6
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 16
+
+
+ 657 01e6 2B050000 		.4byte	.LASF57
+ 658 01ea 05       		.byte	0x5
+ 659 01eb 00       		.byte	0
+ 660 01ec 03       		.uleb128 0x3
+ 661 01ed 32010000 		.4byte	.LASF58
+ 662 01f1 07       		.byte	0x7
+ 663 01f2 16       		.byte	0x16
+ 664 01f3 BB010000 		.4byte	0x1bb
+ 665 01f7 05       		.uleb128 0x5
+ 666 01f8 01       		.byte	0x1
+ 667 01f9 2C000000 		.4byte	0x2c
+ 668 01fd 07       		.byte	0x7
+ 669 01fe 19       		.byte	0x19
+ 670 01ff 2E020000 		.4byte	0x22e
+ 671 0203 06       		.uleb128 0x6
+ 672 0204 ED050000 		.4byte	.LASF59
+ 673 0208 00       		.byte	0
+ 674 0209 06       		.uleb128 0x6
+ 675 020a 0A060000 		.4byte	.LASF60
+ 676 020e 01       		.byte	0x1
+ 677 020f 06       		.uleb128 0x6
+ 678 0210 38000000 		.4byte	.LASF61
+ 679 0214 02       		.byte	0x2
+ 680 0215 06       		.uleb128 0x6
+ 681 0216 F5050000 		.4byte	.LASF62
+ 682 021a 03       		.byte	0x3
+ 683 021b 06       		.uleb128 0x6
+ 684 021c 00000000 		.4byte	.LASF63
+ 685 0220 04       		.byte	0x4
+ 686 0221 06       		.uleb128 0x6
+ 687 0222 90010000 		.4byte	.LASF64
+ 688 0226 05       		.byte	0x5
+ 689 0227 06       		.uleb128 0x6
+ 690 0228 A7050000 		.4byte	.LASF65
+ 691 022c 06       		.byte	0x6
+ 692 022d 00       		.byte	0
+ 693 022e 03       		.uleb128 0x3
+ 694 022f 37030000 		.4byte	.LASF66
+ 695 0233 07       		.byte	0x7
+ 696 0234 21       		.byte	0x21
+ 697 0235 F7010000 		.4byte	0x1f7
+ 698 0239 03       		.uleb128 0x3
+ 699 023a 5C050000 		.4byte	.LASF67
+ 700 023e 07       		.byte	0x7
+ 701 023f 25       		.byte	0x25
+ 702 0240 EC010000 		.4byte	0x1ec
+ 703 0244 03       		.uleb128 0x3
+ 704 0245 40010000 		.4byte	.LASF68
+ 705 0249 07       		.byte	0x7
+ 706 024a 26       		.byte	0x26
+ 707 024b 2E020000 		.4byte	0x22e
+ 708 024f 03       		.uleb128 0x3
+ 709 0250 DB010000 		.4byte	.LASF69
+ 710 0254 08       		.byte	0x8
+ 711 0255 17       		.byte	0x17
+ 712 0256 5A020000 		.4byte	0x25a
+ 713 025a 08       		.uleb128 0x8
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 17
+
+
+ 714 025b 04       		.byte	0x4
+ 715 025c 60020000 		.4byte	0x260
+ 716 0260 09       		.uleb128 0x9
+ 717 0261 67020000 		.4byte	0x267
+ 718 0265 0A       		.uleb128 0xa
+ 719 0266 00       		.byte	0
+ 720 0267 03       		.uleb128 0x3
+ 721 0268 EB030000 		.4byte	.LASF70
+ 722 026c 08       		.byte	0x8
+ 723 026d 1A       		.byte	0x1a
+ 724 026e 72020000 		.4byte	0x272
+ 725 0272 08       		.uleb128 0x8
+ 726 0273 04       		.byte	0x4
+ 727 0274 78020000 		.4byte	0x278
+ 728 0278 0B       		.uleb128 0xb
+ 729 0279 FC000000 		.4byte	0xfc
+ 730 027d 83020000 		.4byte	0x283
+ 731 0281 0A       		.uleb128 0xa
+ 732 0282 00       		.byte	0
+ 733 0283 0C       		.uleb128 0xc
+ 734 0284 0C       		.byte	0xc
+ 735 0285 08       		.byte	0x8
+ 736 0286 1F       		.byte	0x1f
+ 737 0287 BC020000 		.4byte	0x2bc
+ 738 028b 0D       		.uleb128 0xd
+ 739 028c 7B050000 		.4byte	.LASF71
+ 740 0290 08       		.byte	0x8
+ 741 0291 21       		.byte	0x21
+ 742 0292 44020000 		.4byte	0x244
+ 743 0296 00       		.byte	0
+ 744 0297 0D       		.uleb128 0xd
+ 745 0298 00070000 		.4byte	.LASF72
+ 746 029c 08       		.byte	0x8
+ 747 029d 22       		.byte	0x22
+ 748 029e 39020000 		.4byte	0x239
+ 749 02a2 01       		.byte	0x1
+ 750 02a3 0D       		.uleb128 0xd
+ 751 02a4 75000000 		.4byte	.LASF73
+ 752 02a8 08       		.byte	0x8
+ 753 02a9 23       		.byte	0x23
+ 754 02aa 67020000 		.4byte	0x267
+ 755 02ae 04       		.byte	0x4
+ 756 02af 0D       		.uleb128 0xd
+ 757 02b0 6A050000 		.4byte	.LASF74
+ 758 02b4 08       		.byte	0x8
+ 759 02b5 24       		.byte	0x24
+ 760 02b6 4F020000 		.4byte	0x24f
+ 761 02ba 08       		.byte	0x8
+ 762 02bb 00       		.byte	0
+ 763 02bc 03       		.uleb128 0x3
+ 764 02bd B9040000 		.4byte	.LASF75
+ 765 02c1 08       		.byte	0x8
+ 766 02c2 25       		.byte	0x25
+ 767 02c3 83020000 		.4byte	0x283
+ 768 02c7 0E       		.uleb128 0xe
+ 769 02c8 BC020000 		.4byte	0x2bc
+ 770 02cc D2020000 		.4byte	0x2d2
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 18
+
+
+ 771 02d0 0F       		.uleb128 0xf
+ 772 02d1 00       		.byte	0
+ 773 02d2 0C       		.uleb128 0xc
+ 774 02d3 0C       		.byte	0xc
+ 775 02d4 08       		.byte	0x8
+ 776 02d5 2A       		.byte	0x2a
+ 777 02d6 FF020000 		.4byte	0x2ff
+ 778 02da 0D       		.uleb128 0xd
+ 779 02db 10000000 		.4byte	.LASF76
+ 780 02df 08       		.byte	0x8
+ 781 02e0 2C       		.byte	0x2c
+ 782 02e1 39020000 		.4byte	0x239
+ 783 02e5 00       		.byte	0
+ 784 02e6 0D       		.uleb128 0xd
+ 785 02e7 8F020000 		.4byte	.LASF77
+ 786 02eb 08       		.byte	0x8
+ 787 02ec 2D       		.byte	0x2d
+ 788 02ed 05030000 		.4byte	0x305
+ 789 02f1 04       		.byte	0x4
+ 790 02f2 0D       		.uleb128 0xd
+ 791 02f3 CA050000 		.4byte	.LASF78
+ 792 02f7 08       		.byte	0x8
+ 793 02f8 2E       		.byte	0x2e
+ 794 02f9 0A030000 		.4byte	0x30a
+ 795 02fd 08       		.byte	0x8
+ 796 02fe 00       		.byte	0
+ 797 02ff 08       		.uleb128 0x8
+ 798 0300 04       		.byte	0x4
+ 799 0301 C7020000 		.4byte	0x2c7
+ 800 0305 10       		.uleb128 0x10
+ 801 0306 FF020000 		.4byte	0x2ff
+ 802 030a 10       		.uleb128 0x10
+ 803 030b 81000000 		.4byte	0x81
+ 804 030f 03       		.uleb128 0x3
+ 805 0310 44000000 		.4byte	.LASF79
+ 806 0314 08       		.byte	0x8
+ 807 0315 2F       		.byte	0x2f
+ 808 0316 D2020000 		.4byte	0x2d2
+ 809 031a 0C       		.uleb128 0xc
+ 810 031b 0C       		.byte	0xc
+ 811 031c 08       		.byte	0x8
+ 812 031d 34       		.byte	0x34
+ 813 031e 47030000 		.4byte	0x347
+ 814 0322 0D       		.uleb128 0xd
+ 815 0323 07030000 		.4byte	.LASF80
+ 816 0327 08       		.byte	0x8
+ 817 0328 36       		.byte	0x36
+ 818 0329 39020000 		.4byte	0x239
+ 819 032d 00       		.byte	0
+ 820 032e 0D       		.uleb128 0xd
+ 821 032f DC060000 		.4byte	.LASF81
+ 822 0333 08       		.byte	0x8
+ 823 0334 37       		.byte	0x37
+ 824 0335 4F020000 		.4byte	0x24f
+ 825 0339 04       		.byte	0x4
+ 826 033a 0D       		.uleb128 0xd
+ 827 033b CF020000 		.4byte	.LASF82
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 19
+
+
+ 828 033f 08       		.byte	0x8
+ 829 0340 38       		.byte	0x38
+ 830 0341 4F020000 		.4byte	0x24f
+ 831 0345 08       		.byte	0x8
+ 832 0346 00       		.byte	0
+ 833 0347 03       		.uleb128 0x3
+ 834 0348 CF050000 		.4byte	.LASF83
+ 835 034c 08       		.byte	0x8
+ 836 034d 39       		.byte	0x39
+ 837 034e 1A030000 		.4byte	0x31a
+ 838 0352 11       		.uleb128 0x11
+ 839 0353 A5020000 		.4byte	.LASF87
+ 840 0357 01       		.byte	0x1
+ 841 0358 19       		.byte	0x19
+ 842 0359 F1000000 		.4byte	0xf1
+ 843 035d 00000000 		.4byte	.LFB110
+ 844 0361 26000000 		.4byte	.LFE110-.LFB110
+ 845 0365 01       		.uleb128 0x1
+ 846 0366 9C       		.byte	0x9c
+ 847 0367 B8030000 		.4byte	0x3b8
+ 848 036b 12       		.uleb128 0x12
+ 849 036c B5030000 		.4byte	.LASF84
+ 850 0370 01       		.byte	0x1
+ 851 0371 19       		.byte	0x19
+ 852 0372 B8030000 		.4byte	0x3b8
+ 853 0376 00000000 		.4byte	.LLST0
+ 854 037a 13       		.uleb128 0x13
+ 855 037b 1A020000 		.4byte	.LASF85
+ 856 037f 01       		.byte	0x1
+ 857 0380 1A       		.byte	0x1a
+ 858 0381 81000000 		.4byte	0x81
+ 859 0385 01       		.uleb128 0x1
+ 860 0386 51       		.byte	0x51
+ 861 0387 13       		.uleb128 0x13
+ 862 0388 07030000 		.4byte	.LASF80
+ 863 038c 01       		.byte	0x1
+ 864 038d 1B       		.byte	0x1b
+ 865 038e 39020000 		.4byte	0x239
+ 866 0392 01       		.uleb128 0x1
+ 867 0393 52       		.byte	0x52
+ 868 0394 14       		.uleb128 0x14
+ 869 0395 09000000 		.4byte	.LASF86
+ 870 0399 01       		.byte	0x1
+ 871 039a 1E       		.byte	0x1e
+ 872 039b F1000000 		.4byte	0xf1
+ 873 039f 7F       		.sleb128 -1
+ 874 03a0 15       		.uleb128 0x15
+ 875 03a1 02000000 		.4byte	.LBB2
+ 876 03a5 1C000000 		.4byte	.LBE2-.LBB2
+ 877 03a9 16       		.uleb128 0x16
+ 878 03aa 6900     		.ascii	"i\000"
+ 879 03ac 01       		.byte	0x1
+ 880 03ad 20       		.byte	0x20
+ 881 03ae 81000000 		.4byte	0x81
+ 882 03b2 3A000000 		.4byte	.LLST1
+ 883 03b6 00       		.byte	0
+ 884 03b7 00       		.byte	0
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 20
+
+
+ 885 03b8 08       		.uleb128 0x8
+ 886 03b9 04       		.byte	0x4
+ 887 03ba BE030000 		.4byte	0x3be
+ 888 03be 10       		.uleb128 0x10
+ 889 03bf 0F030000 		.4byte	0x30f
+ 890 03c3 17       		.uleb128 0x17
+ 891 03c4 27030000 		.4byte	.LASF88
+ 892 03c8 01       		.byte	0x1
+ 893 03c9 33       		.byte	0x33
+ 894 03ca B0010000 		.4byte	0x1b0
+ 895 03ce 00000000 		.4byte	.LFB111
+ 896 03d2 2E000000 		.4byte	.LFE111-.LFB111
+ 897 03d6 01       		.uleb128 0x1
+ 898 03d7 9C       		.byte	0x9c
+ 899 03d8 2C040000 		.4byte	0x42c
+ 900 03dc 12       		.uleb128 0x12
+ 901 03dd 94050000 		.4byte	.LASF89
+ 902 03e1 01       		.byte	0x1
+ 903 03e2 33       		.byte	0x33
+ 904 03e3 2C040000 		.4byte	0x42c
+ 905 03e7 64000000 		.4byte	.LLST2
+ 906 03eb 12       		.uleb128 0x12
+ 907 03ec A9040000 		.4byte	.LASF90
+ 908 03f0 01       		.byte	0x1
+ 909 03f1 34       		.byte	0x34
+ 910 03f2 81000000 		.4byte	0x81
+ 911 03f6 A6000000 		.4byte	.LLST3
+ 912 03fa 12       		.uleb128 0x12
+ 913 03fb 07030000 		.4byte	.LASF80
+ 914 03ff 01       		.byte	0x1
+ 915 0400 35       		.byte	0x35
+ 916 0401 37040000 		.4byte	0x437
+ 917 0405 E0000000 		.4byte	.LLST4
+ 918 0409 18       		.uleb128 0x18
+ 919 040a F3000000 		.4byte	.LASF91
+ 920 040e 01       		.byte	0x1
+ 921 040f 38       		.byte	0x38
+ 922 0410 4F020000 		.4byte	0x24f
+ 923 0414 1A010000 		.4byte	.LLST5
+ 924 0418 19       		.uleb128 0x19
+ 925 0419 00000000 		.4byte	.Ldebug_ranges0+0
+ 926 041d 16       		.uleb128 0x16
+ 927 041e 6A00     		.ascii	"j\000"
+ 928 0420 01       		.byte	0x1
+ 929 0421 3F       		.byte	0x3f
+ 930 0422 81000000 		.4byte	0x81
+ 931 0426 45010000 		.4byte	.LLST6
+ 932 042a 00       		.byte	0
+ 933 042b 00       		.byte	0
+ 934 042c 08       		.uleb128 0x8
+ 935 042d 04       		.byte	0x4
+ 936 042e 32040000 		.4byte	0x432
+ 937 0432 10       		.uleb128 0x10
+ 938 0433 47030000 		.4byte	0x347
+ 939 0437 08       		.uleb128 0x8
+ 940 0438 04       		.byte	0x4
+ 941 0439 39020000 		.4byte	0x239
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 21
+
+
+ 942 043d 17       		.uleb128 0x17
+ 943 043e DB040000 		.4byte	.LASF92
+ 944 0442 01       		.byte	0x1
+ 945 0443 57       		.byte	0x57
+ 946 0444 B0010000 		.4byte	0x1b0
+ 947 0448 00000000 		.4byte	.LFB112
+ 948 044c FA000000 		.4byte	.LFE112-.LFB112
+ 949 0450 01       		.uleb128 0x1
+ 950 0451 9C       		.byte	0x9c
+ 951 0452 8C050000 		.4byte	0x58c
+ 952 0456 12       		.uleb128 0x12
+ 953 0457 B5030000 		.4byte	.LASF84
+ 954 045b 01       		.byte	0x1
+ 955 045c 57       		.byte	0x57
+ 956 045d B8030000 		.4byte	0x3b8
+ 957 0461 6E010000 		.4byte	.LLST7
+ 958 0465 12       		.uleb128 0x12
+ 959 0466 1A020000 		.4byte	.LASF85
+ 960 046a 01       		.byte	0x1
+ 961 046b 58       		.byte	0x58
+ 962 046c 81000000 		.4byte	0x81
+ 963 0470 B3010000 		.4byte	.LLST8
+ 964 0474 12       		.uleb128 0x12
+ 965 0475 94050000 		.4byte	.LASF89
+ 966 0479 01       		.byte	0x1
+ 967 047a 59       		.byte	0x59
+ 968 047b 2C040000 		.4byte	0x42c
+ 969 047f D4010000 		.4byte	.LLST9
+ 970 0483 12       		.uleb128 0x12
+ 971 0484 A9040000 		.4byte	.LASF90
+ 972 0488 01       		.byte	0x1
+ 973 0489 5A       		.byte	0x5a
+ 974 048a 81000000 		.4byte	0x81
+ 975 048e F2010000 		.4byte	.LLST10
+ 976 0492 1A       		.uleb128 0x1a
+ 977 0493 657600   		.ascii	"ev\000"
+ 978 0496 01       		.byte	0x1
+ 979 0497 5B       		.byte	0x5b
+ 980 0498 44020000 		.4byte	0x244
+ 981 049c 13020000 		.4byte	.LLST11
+ 982 04a0 12       		.uleb128 0x12
+ 983 04a1 07030000 		.4byte	.LASF80
+ 984 04a5 01       		.byte	0x1
+ 985 04a6 5C       		.byte	0x5c
+ 986 04a7 37040000 		.4byte	0x437
+ 987 04ab 33020000 		.4byte	.LLST12
+ 988 04af 18       		.uleb128 0x18
+ 989 04b0 75000000 		.4byte	.LASF73
+ 990 04b4 01       		.byte	0x1
+ 991 04b5 5E       		.byte	0x5e
+ 992 04b6 67020000 		.4byte	0x267
+ 993 04ba 53020000 		.4byte	.LLST13
+ 994 04be 18       		.uleb128 0x18
+ 995 04bf 85060000 		.4byte	.LASF93
+ 996 04c3 01       		.byte	0x1
+ 997 04c4 5F       		.byte	0x5f
+ 998 04c5 4F020000 		.4byte	0x24f
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 22
+
+
+ 999 04c9 7E020000 		.4byte	.LLST14
+ 1000 04cd 18       		.uleb128 0x18
+ 1001 04ce F3000000 		.4byte	.LASF91
+ 1002 04d2 01       		.byte	0x1
+ 1003 04d3 60       		.byte	0x60
+ 1004 04d4 4F020000 		.4byte	0x24f
+ 1005 04d8 B4020000 		.4byte	.LLST15
+ 1006 04dc 18       		.uleb128 0x18
+ 1007 04dd 15060000 		.4byte	.LASF94
+ 1008 04e1 01       		.byte	0x1
+ 1009 04e2 61       		.byte	0x61
+ 1010 04e3 4F020000 		.4byte	0x24f
+ 1011 04e7 EB020000 		.4byte	.LLST16
+ 1012 04eb 1B       		.uleb128 0x1b
+ 1013 04ec 0B050000 		.4byte	.LASF95
+ 1014 04f0 01       		.byte	0x1
+ 1015 04f1 65       		.byte	0x65
+ 1016 04f2 39020000 		.4byte	0x239
+ 1017 04f6 01       		.uleb128 0x1
+ 1018 04f7 5B       		.byte	0x5b
+ 1019 04f8 18       		.uleb128 0x18
+ 1020 04f9 00070000 		.4byte	.LASF72
+ 1021 04fd 01       		.byte	0x1
+ 1022 04fe 66       		.byte	0x66
+ 1023 04ff 39020000 		.4byte	0x239
+ 1024 0503 22030000 		.4byte	.LLST17
+ 1025 0507 18       		.uleb128 0x18
+ 1026 0508 4E010000 		.4byte	.LASF96
+ 1027 050c 01       		.byte	0x1
+ 1028 050d 6A       		.byte	0x6a
+ 1029 050e F1000000 		.4byte	0xf1
+ 1030 0512 4B030000 		.4byte	.LLST18
+ 1031 0516 18       		.uleb128 0x18
+ 1032 0517 92060000 		.4byte	.LASF97
+ 1033 051b 01       		.byte	0x1
+ 1034 051c 72       		.byte	0x72
+ 1035 051d 05030000 		.4byte	0x305
+ 1036 0521 69030000 		.4byte	.LLST19
+ 1037 0525 18       		.uleb128 0x18
+ 1038 0526 3F030000 		.4byte	.LASF98
+ 1039 052a 01       		.byte	0x1
+ 1040 052b 74       		.byte	0x74
+ 1041 052c 81000000 		.4byte	0x81
+ 1042 0530 92030000 		.4byte	.LLST20
+ 1043 0534 1C       		.uleb128 0x1c
+ 1044 0535 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 1045 0539 75050000 		.4byte	0x575
+ 1046 053d 16       		.uleb128 0x16
+ 1047 053e 6900     		.ascii	"i\000"
+ 1048 0540 01       		.byte	0x1
+ 1049 0541 81       		.byte	0x81
+ 1050 0542 81000000 		.4byte	0x81
+ 1051 0546 DE030000 		.4byte	.LLST21
+ 1052 054a 1C       		.uleb128 0x1c
+ 1053 054b 38000000 		.4byte	.Ldebug_ranges0+0x38
+ 1054 054f 61050000 		.4byte	0x561
+ 1055 0553 16       		.uleb128 0x16
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 23
+
+
+ 1056 0554 6A00     		.ascii	"j\000"
+ 1057 0556 01       		.byte	0x1
+ 1058 0557 90       		.byte	0x90
+ 1059 0558 81000000 		.4byte	0x81
+ 1060 055c 07040000 		.4byte	.LLST22
+ 1061 0560 00       		.byte	0
+ 1062 0561 19       		.uleb128 0x19
+ 1063 0562 50000000 		.4byte	.Ldebug_ranges0+0x50
+ 1064 0566 16       		.uleb128 0x16
+ 1065 0567 6A00     		.ascii	"j\000"
+ 1066 0569 01       		.byte	0x1
+ 1067 056a A0       		.byte	0xa0
+ 1068 056b 81000000 		.4byte	0x81
+ 1069 056f 30040000 		.4byte	.LLST23
+ 1070 0573 00       		.byte	0
+ 1071 0574 00       		.byte	0
+ 1072 0575 1D       		.uleb128 0x1d
+ 1073 0576 1A000000 		.4byte	.LVL22
+ 1074 057a 52030000 		.4byte	0x352
+ 1075 057e 1E       		.uleb128 0x1e
+ 1076 057f 01       		.uleb128 0x1
+ 1077 0580 50       		.byte	0x50
+ 1078 0581 02       		.uleb128 0x2
+ 1079 0582 74       		.byte	0x74
+ 1080 0583 00       		.sleb128 0
+ 1081 0584 1E       		.uleb128 0x1e
+ 1082 0585 01       		.uleb128 0x1
+ 1083 0586 52       		.byte	0x52
+ 1084 0587 02       		.uleb128 0x2
+ 1085 0588 7B       		.byte	0x7b
+ 1086 0589 00       		.sleb128 0
+ 1087 058a 00       		.byte	0
+ 1088 058b 00       		.byte	0
+ 1089 058c 1F       		.uleb128 0x1f
+ 1090 058d C4060000 		.4byte	.LASF99
+ 1091 0591 09       		.byte	0x9
+ 1092 0592 40       		.byte	0x40
+ 1093 0593 C9000000 		.4byte	0xc9
+ 1094 0597 1F       		.uleb128 0x1f
+ 1095 0598 2E020000 		.4byte	.LASF100
+ 1096 059c 09       		.byte	0x9
+ 1097 059d 47       		.byte	0x47
+ 1098 059e D4000000 		.4byte	0xd4
+ 1099 05a2 1F       		.uleb128 0x1f
+ 1100 05a3 81050000 		.4byte	.LASF101
+ 1101 05a7 09       		.byte	0x9
+ 1102 05a8 4A       		.byte	0x4a
+ 1103 05a9 C9000000 		.4byte	0xc9
+ 1104 05ad 1F       		.uleb128 0x1f
+ 1105 05ae B3010000 		.4byte	.LASF102
+ 1106 05b2 0A       		.byte	0xa
+ 1107 05b3 48       		.byte	0x48
+ 1108 05b4 DF000000 		.4byte	0xdf
+ 1109 05b8 1F       		.uleb128 0x1f
+ 1110 05b9 B4000000 		.4byte	.LASF103
+ 1111 05bd 0B       		.byte	0xb
+ 1112 05be 44       		.byte	0x44
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 24
+
+
+ 1113 05bf C9000000 		.4byte	0xc9
+ 1114 05c3 20       		.uleb128 0x20
+ 1115 05c4 9E060000 		.4byte	.LASF104
+ 1116 05c8 0C       		.byte	0xc
+ 1117 05c9 1207     		.2byte	0x712
+ 1118 05cb CF050000 		.4byte	0x5cf
+ 1119 05cf 21       		.uleb128 0x21
+ 1120 05d0 8C000000 		.4byte	0x8c
+ 1121 05d4 00       		.byte	0
+ 1122              		.section	.debug_abbrev,"",%progbits
+ 1123              	.Ldebug_abbrev0:
+ 1124 0000 01       		.uleb128 0x1
+ 1125 0001 11       		.uleb128 0x11
+ 1126 0002 01       		.byte	0x1
+ 1127 0003 25       		.uleb128 0x25
+ 1128 0004 0E       		.uleb128 0xe
+ 1129 0005 13       		.uleb128 0x13
+ 1130 0006 0B       		.uleb128 0xb
+ 1131 0007 03       		.uleb128 0x3
+ 1132 0008 0E       		.uleb128 0xe
+ 1133 0009 1B       		.uleb128 0x1b
+ 1134 000a 0E       		.uleb128 0xe
+ 1135 000b 55       		.uleb128 0x55
+ 1136 000c 17       		.uleb128 0x17
+ 1137 000d 11       		.uleb128 0x11
+ 1138 000e 01       		.uleb128 0x1
+ 1139 000f 10       		.uleb128 0x10
+ 1140 0010 17       		.uleb128 0x17
+ 1141 0011 00       		.byte	0
+ 1142 0012 00       		.byte	0
+ 1143 0013 02       		.uleb128 0x2
+ 1144 0014 24       		.uleb128 0x24
+ 1145 0015 00       		.byte	0
+ 1146 0016 0B       		.uleb128 0xb
+ 1147 0017 0B       		.uleb128 0xb
+ 1148 0018 3E       		.uleb128 0x3e
+ 1149 0019 0B       		.uleb128 0xb
+ 1150 001a 03       		.uleb128 0x3
+ 1151 001b 0E       		.uleb128 0xe
+ 1152 001c 00       		.byte	0
+ 1153 001d 00       		.byte	0
+ 1154 001e 03       		.uleb128 0x3
+ 1155 001f 16       		.uleb128 0x16
+ 1156 0020 00       		.byte	0
+ 1157 0021 03       		.uleb128 0x3
+ 1158 0022 0E       		.uleb128 0xe
+ 1159 0023 3A       		.uleb128 0x3a
+ 1160 0024 0B       		.uleb128 0xb
+ 1161 0025 3B       		.uleb128 0x3b
+ 1162 0026 0B       		.uleb128 0xb
+ 1163 0027 49       		.uleb128 0x49
+ 1164 0028 13       		.uleb128 0x13
+ 1165 0029 00       		.byte	0
+ 1166 002a 00       		.byte	0
+ 1167 002b 04       		.uleb128 0x4
+ 1168 002c 24       		.uleb128 0x24
+ 1169 002d 00       		.byte	0
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 25
+
+
+ 1170 002e 0B       		.uleb128 0xb
+ 1171 002f 0B       		.uleb128 0xb
+ 1172 0030 3E       		.uleb128 0x3e
+ 1173 0031 0B       		.uleb128 0xb
+ 1174 0032 03       		.uleb128 0x3
+ 1175 0033 08       		.uleb128 0x8
+ 1176 0034 00       		.byte	0
+ 1177 0035 00       		.byte	0
+ 1178 0036 05       		.uleb128 0x5
+ 1179 0037 04       		.uleb128 0x4
+ 1180 0038 01       		.byte	0x1
+ 1181 0039 0B       		.uleb128 0xb
+ 1182 003a 0B       		.uleb128 0xb
+ 1183 003b 49       		.uleb128 0x49
+ 1184 003c 13       		.uleb128 0x13
+ 1185 003d 3A       		.uleb128 0x3a
+ 1186 003e 0B       		.uleb128 0xb
+ 1187 003f 3B       		.uleb128 0x3b
+ 1188 0040 0B       		.uleb128 0xb
+ 1189 0041 01       		.uleb128 0x1
+ 1190 0042 13       		.uleb128 0x13
+ 1191 0043 00       		.byte	0
+ 1192 0044 00       		.byte	0
+ 1193 0045 06       		.uleb128 0x6
+ 1194 0046 28       		.uleb128 0x28
+ 1195 0047 00       		.byte	0
+ 1196 0048 03       		.uleb128 0x3
+ 1197 0049 0E       		.uleb128 0xe
+ 1198 004a 1C       		.uleb128 0x1c
+ 1199 004b 0B       		.uleb128 0xb
+ 1200 004c 00       		.byte	0
+ 1201 004d 00       		.byte	0
+ 1202 004e 07       		.uleb128 0x7
+ 1203 004f 28       		.uleb128 0x28
+ 1204 0050 00       		.byte	0
+ 1205 0051 03       		.uleb128 0x3
+ 1206 0052 0E       		.uleb128 0xe
+ 1207 0053 1C       		.uleb128 0x1c
+ 1208 0054 0D       		.uleb128 0xd
+ 1209 0055 00       		.byte	0
+ 1210 0056 00       		.byte	0
+ 1211 0057 08       		.uleb128 0x8
+ 1212 0058 0F       		.uleb128 0xf
+ 1213 0059 00       		.byte	0
+ 1214 005a 0B       		.uleb128 0xb
+ 1215 005b 0B       		.uleb128 0xb
+ 1216 005c 49       		.uleb128 0x49
+ 1217 005d 13       		.uleb128 0x13
+ 1218 005e 00       		.byte	0
+ 1219 005f 00       		.byte	0
+ 1220 0060 09       		.uleb128 0x9
+ 1221 0061 15       		.uleb128 0x15
+ 1222 0062 01       		.byte	0x1
+ 1223 0063 01       		.uleb128 0x1
+ 1224 0064 13       		.uleb128 0x13
+ 1225 0065 00       		.byte	0
+ 1226 0066 00       		.byte	0
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 26
+
+
+ 1227 0067 0A       		.uleb128 0xa
+ 1228 0068 18       		.uleb128 0x18
+ 1229 0069 00       		.byte	0
+ 1230 006a 00       		.byte	0
+ 1231 006b 00       		.byte	0
+ 1232 006c 0B       		.uleb128 0xb
+ 1233 006d 15       		.uleb128 0x15
+ 1234 006e 01       		.byte	0x1
+ 1235 006f 49       		.uleb128 0x49
+ 1236 0070 13       		.uleb128 0x13
+ 1237 0071 01       		.uleb128 0x1
+ 1238 0072 13       		.uleb128 0x13
+ 1239 0073 00       		.byte	0
+ 1240 0074 00       		.byte	0
+ 1241 0075 0C       		.uleb128 0xc
+ 1242 0076 13       		.uleb128 0x13
+ 1243 0077 01       		.byte	0x1
+ 1244 0078 0B       		.uleb128 0xb
+ 1245 0079 0B       		.uleb128 0xb
+ 1246 007a 3A       		.uleb128 0x3a
+ 1247 007b 0B       		.uleb128 0xb
+ 1248 007c 3B       		.uleb128 0x3b
+ 1249 007d 0B       		.uleb128 0xb
+ 1250 007e 01       		.uleb128 0x1
+ 1251 007f 13       		.uleb128 0x13
+ 1252 0080 00       		.byte	0
+ 1253 0081 00       		.byte	0
+ 1254 0082 0D       		.uleb128 0xd
+ 1255 0083 0D       		.uleb128 0xd
+ 1256 0084 00       		.byte	0
+ 1257 0085 03       		.uleb128 0x3
+ 1258 0086 0E       		.uleb128 0xe
+ 1259 0087 3A       		.uleb128 0x3a
+ 1260 0088 0B       		.uleb128 0xb
+ 1261 0089 3B       		.uleb128 0x3b
+ 1262 008a 0B       		.uleb128 0xb
+ 1263 008b 49       		.uleb128 0x49
+ 1264 008c 13       		.uleb128 0x13
+ 1265 008d 38       		.uleb128 0x38
+ 1266 008e 0B       		.uleb128 0xb
+ 1267 008f 00       		.byte	0
+ 1268 0090 00       		.byte	0
+ 1269 0091 0E       		.uleb128 0xe
+ 1270 0092 01       		.uleb128 0x1
+ 1271 0093 01       		.byte	0x1
+ 1272 0094 49       		.uleb128 0x49
+ 1273 0095 13       		.uleb128 0x13
+ 1274 0096 01       		.uleb128 0x1
+ 1275 0097 13       		.uleb128 0x13
+ 1276 0098 00       		.byte	0
+ 1277 0099 00       		.byte	0
+ 1278 009a 0F       		.uleb128 0xf
+ 1279 009b 21       		.uleb128 0x21
+ 1280 009c 00       		.byte	0
+ 1281 009d 00       		.byte	0
+ 1282 009e 00       		.byte	0
+ 1283 009f 10       		.uleb128 0x10
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 27
+
+
+ 1284 00a0 26       		.uleb128 0x26
+ 1285 00a1 00       		.byte	0
+ 1286 00a2 49       		.uleb128 0x49
+ 1287 00a3 13       		.uleb128 0x13
+ 1288 00a4 00       		.byte	0
+ 1289 00a5 00       		.byte	0
+ 1290 00a6 11       		.uleb128 0x11
+ 1291 00a7 2E       		.uleb128 0x2e
+ 1292 00a8 01       		.byte	0x1
+ 1293 00a9 3F       		.uleb128 0x3f
+ 1294 00aa 19       		.uleb128 0x19
+ 1295 00ab 03       		.uleb128 0x3
+ 1296 00ac 0E       		.uleb128 0xe
+ 1297 00ad 3A       		.uleb128 0x3a
+ 1298 00ae 0B       		.uleb128 0xb
+ 1299 00af 3B       		.uleb128 0x3b
+ 1300 00b0 0B       		.uleb128 0xb
+ 1301 00b1 27       		.uleb128 0x27
+ 1302 00b2 19       		.uleb128 0x19
+ 1303 00b3 49       		.uleb128 0x49
+ 1304 00b4 13       		.uleb128 0x13
+ 1305 00b5 11       		.uleb128 0x11
+ 1306 00b6 01       		.uleb128 0x1
+ 1307 00b7 12       		.uleb128 0x12
+ 1308 00b8 06       		.uleb128 0x6
+ 1309 00b9 40       		.uleb128 0x40
+ 1310 00ba 18       		.uleb128 0x18
+ 1311 00bb 9742     		.uleb128 0x2117
+ 1312 00bd 19       		.uleb128 0x19
+ 1313 00be 01       		.uleb128 0x1
+ 1314 00bf 13       		.uleb128 0x13
+ 1315 00c0 00       		.byte	0
+ 1316 00c1 00       		.byte	0
+ 1317 00c2 12       		.uleb128 0x12
+ 1318 00c3 05       		.uleb128 0x5
+ 1319 00c4 00       		.byte	0
+ 1320 00c5 03       		.uleb128 0x3
+ 1321 00c6 0E       		.uleb128 0xe
+ 1322 00c7 3A       		.uleb128 0x3a
+ 1323 00c8 0B       		.uleb128 0xb
+ 1324 00c9 3B       		.uleb128 0x3b
+ 1325 00ca 0B       		.uleb128 0xb
+ 1326 00cb 49       		.uleb128 0x49
+ 1327 00cc 13       		.uleb128 0x13
+ 1328 00cd 02       		.uleb128 0x2
+ 1329 00ce 17       		.uleb128 0x17
+ 1330 00cf 00       		.byte	0
+ 1331 00d0 00       		.byte	0
+ 1332 00d1 13       		.uleb128 0x13
+ 1333 00d2 05       		.uleb128 0x5
+ 1334 00d3 00       		.byte	0
+ 1335 00d4 03       		.uleb128 0x3
+ 1336 00d5 0E       		.uleb128 0xe
+ 1337 00d6 3A       		.uleb128 0x3a
+ 1338 00d7 0B       		.uleb128 0xb
+ 1339 00d8 3B       		.uleb128 0x3b
+ 1340 00d9 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 28
+
+
+ 1341 00da 49       		.uleb128 0x49
+ 1342 00db 13       		.uleb128 0x13
+ 1343 00dc 02       		.uleb128 0x2
+ 1344 00dd 18       		.uleb128 0x18
+ 1345 00de 00       		.byte	0
+ 1346 00df 00       		.byte	0
+ 1347 00e0 14       		.uleb128 0x14
+ 1348 00e1 34       		.uleb128 0x34
+ 1349 00e2 00       		.byte	0
+ 1350 00e3 03       		.uleb128 0x3
+ 1351 00e4 0E       		.uleb128 0xe
+ 1352 00e5 3A       		.uleb128 0x3a
+ 1353 00e6 0B       		.uleb128 0xb
+ 1354 00e7 3B       		.uleb128 0x3b
+ 1355 00e8 0B       		.uleb128 0xb
+ 1356 00e9 49       		.uleb128 0x49
+ 1357 00ea 13       		.uleb128 0x13
+ 1358 00eb 1C       		.uleb128 0x1c
+ 1359 00ec 0D       		.uleb128 0xd
+ 1360 00ed 00       		.byte	0
+ 1361 00ee 00       		.byte	0
+ 1362 00ef 15       		.uleb128 0x15
+ 1363 00f0 0B       		.uleb128 0xb
+ 1364 00f1 01       		.byte	0x1
+ 1365 00f2 11       		.uleb128 0x11
+ 1366 00f3 01       		.uleb128 0x1
+ 1367 00f4 12       		.uleb128 0x12
+ 1368 00f5 06       		.uleb128 0x6
+ 1369 00f6 00       		.byte	0
+ 1370 00f7 00       		.byte	0
+ 1371 00f8 16       		.uleb128 0x16
+ 1372 00f9 34       		.uleb128 0x34
+ 1373 00fa 00       		.byte	0
+ 1374 00fb 03       		.uleb128 0x3
+ 1375 00fc 08       		.uleb128 0x8
+ 1376 00fd 3A       		.uleb128 0x3a
+ 1377 00fe 0B       		.uleb128 0xb
+ 1378 00ff 3B       		.uleb128 0x3b
+ 1379 0100 0B       		.uleb128 0xb
+ 1380 0101 49       		.uleb128 0x49
+ 1381 0102 13       		.uleb128 0x13
+ 1382 0103 02       		.uleb128 0x2
+ 1383 0104 17       		.uleb128 0x17
+ 1384 0105 00       		.byte	0
+ 1385 0106 00       		.byte	0
+ 1386 0107 17       		.uleb128 0x17
+ 1387 0108 2E       		.uleb128 0x2e
+ 1388 0109 01       		.byte	0x1
+ 1389 010a 3F       		.uleb128 0x3f
+ 1390 010b 19       		.uleb128 0x19
+ 1391 010c 03       		.uleb128 0x3
+ 1392 010d 0E       		.uleb128 0xe
+ 1393 010e 3A       		.uleb128 0x3a
+ 1394 010f 0B       		.uleb128 0xb
+ 1395 0110 3B       		.uleb128 0x3b
+ 1396 0111 0B       		.uleb128 0xb
+ 1397 0112 27       		.uleb128 0x27
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 29
+
+
+ 1398 0113 19       		.uleb128 0x19
+ 1399 0114 49       		.uleb128 0x49
+ 1400 0115 13       		.uleb128 0x13
+ 1401 0116 11       		.uleb128 0x11
+ 1402 0117 01       		.uleb128 0x1
+ 1403 0118 12       		.uleb128 0x12
+ 1404 0119 06       		.uleb128 0x6
+ 1405 011a 40       		.uleb128 0x40
+ 1406 011b 18       		.uleb128 0x18
+ 1407 011c 9642     		.uleb128 0x2116
+ 1408 011e 19       		.uleb128 0x19
+ 1409 011f 01       		.uleb128 0x1
+ 1410 0120 13       		.uleb128 0x13
+ 1411 0121 00       		.byte	0
+ 1412 0122 00       		.byte	0
+ 1413 0123 18       		.uleb128 0x18
+ 1414 0124 34       		.uleb128 0x34
+ 1415 0125 00       		.byte	0
+ 1416 0126 03       		.uleb128 0x3
+ 1417 0127 0E       		.uleb128 0xe
+ 1418 0128 3A       		.uleb128 0x3a
+ 1419 0129 0B       		.uleb128 0xb
+ 1420 012a 3B       		.uleb128 0x3b
+ 1421 012b 0B       		.uleb128 0xb
+ 1422 012c 49       		.uleb128 0x49
+ 1423 012d 13       		.uleb128 0x13
+ 1424 012e 02       		.uleb128 0x2
+ 1425 012f 17       		.uleb128 0x17
+ 1426 0130 00       		.byte	0
+ 1427 0131 00       		.byte	0
+ 1428 0132 19       		.uleb128 0x19
+ 1429 0133 0B       		.uleb128 0xb
+ 1430 0134 01       		.byte	0x1
+ 1431 0135 55       		.uleb128 0x55
+ 1432 0136 17       		.uleb128 0x17
+ 1433 0137 00       		.byte	0
+ 1434 0138 00       		.byte	0
+ 1435 0139 1A       		.uleb128 0x1a
+ 1436 013a 05       		.uleb128 0x5
+ 1437 013b 00       		.byte	0
+ 1438 013c 03       		.uleb128 0x3
+ 1439 013d 08       		.uleb128 0x8
+ 1440 013e 3A       		.uleb128 0x3a
+ 1441 013f 0B       		.uleb128 0xb
+ 1442 0140 3B       		.uleb128 0x3b
+ 1443 0141 0B       		.uleb128 0xb
+ 1444 0142 49       		.uleb128 0x49
+ 1445 0143 13       		.uleb128 0x13
+ 1446 0144 02       		.uleb128 0x2
+ 1447 0145 17       		.uleb128 0x17
+ 1448 0146 00       		.byte	0
+ 1449 0147 00       		.byte	0
+ 1450 0148 1B       		.uleb128 0x1b
+ 1451 0149 34       		.uleb128 0x34
+ 1452 014a 00       		.byte	0
+ 1453 014b 03       		.uleb128 0x3
+ 1454 014c 0E       		.uleb128 0xe
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 30
+
+
+ 1455 014d 3A       		.uleb128 0x3a
+ 1456 014e 0B       		.uleb128 0xb
+ 1457 014f 3B       		.uleb128 0x3b
+ 1458 0150 0B       		.uleb128 0xb
+ 1459 0151 49       		.uleb128 0x49
+ 1460 0152 13       		.uleb128 0x13
+ 1461 0153 02       		.uleb128 0x2
+ 1462 0154 18       		.uleb128 0x18
+ 1463 0155 00       		.byte	0
+ 1464 0156 00       		.byte	0
+ 1465 0157 1C       		.uleb128 0x1c
+ 1466 0158 0B       		.uleb128 0xb
+ 1467 0159 01       		.byte	0x1
+ 1468 015a 55       		.uleb128 0x55
+ 1469 015b 17       		.uleb128 0x17
+ 1470 015c 01       		.uleb128 0x1
+ 1471 015d 13       		.uleb128 0x13
+ 1472 015e 00       		.byte	0
+ 1473 015f 00       		.byte	0
+ 1474 0160 1D       		.uleb128 0x1d
+ 1475 0161 898201   		.uleb128 0x4109
+ 1476 0164 01       		.byte	0x1
+ 1477 0165 11       		.uleb128 0x11
+ 1478 0166 01       		.uleb128 0x1
+ 1479 0167 31       		.uleb128 0x31
+ 1480 0168 13       		.uleb128 0x13
+ 1481 0169 00       		.byte	0
+ 1482 016a 00       		.byte	0
+ 1483 016b 1E       		.uleb128 0x1e
+ 1484 016c 8A8201   		.uleb128 0x410a
+ 1485 016f 00       		.byte	0
+ 1486 0170 02       		.uleb128 0x2
+ 1487 0171 18       		.uleb128 0x18
+ 1488 0172 9142     		.uleb128 0x2111
+ 1489 0174 18       		.uleb128 0x18
+ 1490 0175 00       		.byte	0
+ 1491 0176 00       		.byte	0
+ 1492 0177 1F       		.uleb128 0x1f
+ 1493 0178 34       		.uleb128 0x34
+ 1494 0179 00       		.byte	0
+ 1495 017a 03       		.uleb128 0x3
+ 1496 017b 0E       		.uleb128 0xe
+ 1497 017c 3A       		.uleb128 0x3a
+ 1498 017d 0B       		.uleb128 0xb
+ 1499 017e 3B       		.uleb128 0x3b
+ 1500 017f 0B       		.uleb128 0xb
+ 1501 0180 49       		.uleb128 0x49
+ 1502 0181 13       		.uleb128 0x13
+ 1503 0182 3F       		.uleb128 0x3f
+ 1504 0183 19       		.uleb128 0x19
+ 1505 0184 3C       		.uleb128 0x3c
+ 1506 0185 19       		.uleb128 0x19
+ 1507 0186 00       		.byte	0
+ 1508 0187 00       		.byte	0
+ 1509 0188 20       		.uleb128 0x20
+ 1510 0189 34       		.uleb128 0x34
+ 1511 018a 00       		.byte	0
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 31
+
+
+ 1512 018b 03       		.uleb128 0x3
+ 1513 018c 0E       		.uleb128 0xe
+ 1514 018d 3A       		.uleb128 0x3a
+ 1515 018e 0B       		.uleb128 0xb
+ 1516 018f 3B       		.uleb128 0x3b
+ 1517 0190 05       		.uleb128 0x5
+ 1518 0191 49       		.uleb128 0x49
+ 1519 0192 13       		.uleb128 0x13
+ 1520 0193 3F       		.uleb128 0x3f
+ 1521 0194 19       		.uleb128 0x19
+ 1522 0195 3C       		.uleb128 0x3c
+ 1523 0196 19       		.uleb128 0x19
+ 1524 0197 00       		.byte	0
+ 1525 0198 00       		.byte	0
+ 1526 0199 21       		.uleb128 0x21
+ 1527 019a 35       		.uleb128 0x35
+ 1528 019b 00       		.byte	0
+ 1529 019c 49       		.uleb128 0x49
+ 1530 019d 13       		.uleb128 0x13
+ 1531 019e 00       		.byte	0
+ 1532 019f 00       		.byte	0
+ 1533 01a0 00       		.byte	0
+ 1534              		.section	.debug_loc,"",%progbits
+ 1535              	.Ldebug_loc0:
+ 1536              	.LLST0:
+ 1537 0000 00000000 		.4byte	.LVL0
+ 1538 0004 14000000 		.4byte	.LVL3
+ 1539 0008 0100     		.2byte	0x1
+ 1540 000a 50       		.byte	0x50
+ 1541 000b 14000000 		.4byte	.LVL3
+ 1542 000f 16000000 		.4byte	.LVL4
+ 1543 0013 0400     		.2byte	0x4
+ 1544 0015 F3       		.byte	0xf3
+ 1545 0016 01       		.uleb128 0x1
+ 1546 0017 50       		.byte	0x50
+ 1547 0018 9F       		.byte	0x9f
+ 1548 0019 16000000 		.4byte	.LVL4
+ 1549 001d 22000000 		.4byte	.LVL7
+ 1550 0021 0100     		.2byte	0x1
+ 1551 0023 50       		.byte	0x50
+ 1552 0024 22000000 		.4byte	.LVL7
+ 1553 0028 26000000 		.4byte	.LFE110
+ 1554 002c 0400     		.2byte	0x4
+ 1555 002e F3       		.byte	0xf3
+ 1556 002f 01       		.uleb128 0x1
+ 1557 0030 50       		.byte	0x50
+ 1558 0031 9F       		.byte	0x9f
+ 1559 0032 00000000 		.4byte	0
+ 1560 0036 00000000 		.4byte	0
+ 1561              	.LLST1:
+ 1562 003a 02000000 		.4byte	.LVL1
+ 1563 003e 06000000 		.4byte	.LVL2
+ 1564 0042 0200     		.2byte	0x2
+ 1565 0044 30       		.byte	0x30
+ 1566 0045 9F       		.byte	0x9f
+ 1567 0046 06000000 		.4byte	.LVL2
+ 1568 004a 18000000 		.4byte	.LVL5
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 32
+
+
+ 1569 004e 0100     		.2byte	0x1
+ 1570 0050 53       		.byte	0x53
+ 1571 0051 1A000000 		.4byte	.LVL6
+ 1572 0055 26000000 		.4byte	.LFE110
+ 1573 0059 0100     		.2byte	0x1
+ 1574 005b 53       		.byte	0x53
+ 1575 005c 00000000 		.4byte	0
+ 1576 0060 00000000 		.4byte	0
+ 1577              	.LLST2:
+ 1578 0064 00000000 		.4byte	.LVL8
+ 1579 0068 06000000 		.4byte	.LVL9
+ 1580 006c 0100     		.2byte	0x1
+ 1581 006e 50       		.byte	0x50
+ 1582 006f 06000000 		.4byte	.LVL9
+ 1583 0073 08000000 		.4byte	.LVL10
+ 1584 0077 0400     		.2byte	0x4
+ 1585 0079 F3       		.byte	0xf3
+ 1586 007a 01       		.uleb128 0x1
+ 1587 007b 50       		.byte	0x50
+ 1588 007c 9F       		.byte	0x9f
+ 1589 007d 08000000 		.4byte	.LVL10
+ 1590 0081 20000000 		.4byte	.LVL15
+ 1591 0085 0100     		.2byte	0x1
+ 1592 0087 55       		.byte	0x55
+ 1593 0088 20000000 		.4byte	.LVL15
+ 1594 008c 28000000 		.4byte	.LVL16
+ 1595 0090 0100     		.2byte	0x1
+ 1596 0092 50       		.byte	0x50
+ 1597 0093 28000000 		.4byte	.LVL16
+ 1598 0097 2E000000 		.4byte	.LFE111
+ 1599 009b 0100     		.2byte	0x1
+ 1600 009d 55       		.byte	0x55
+ 1601 009e 00000000 		.4byte	0
+ 1602 00a2 00000000 		.4byte	0
+ 1603              	.LLST3:
+ 1604 00a6 00000000 		.4byte	.LVL8
+ 1605 00aa 08000000 		.4byte	.LVL10
+ 1606 00ae 0100     		.2byte	0x1
+ 1607 00b0 51       		.byte	0x51
+ 1608 00b1 08000000 		.4byte	.LVL10
+ 1609 00b5 20000000 		.4byte	.LVL15
+ 1610 00b9 0400     		.2byte	0x4
+ 1611 00bb F3       		.byte	0xf3
+ 1612 00bc 01       		.uleb128 0x1
+ 1613 00bd 51       		.byte	0x51
+ 1614 00be 9F       		.byte	0x9f
+ 1615 00bf 20000000 		.4byte	.LVL15
+ 1616 00c3 28000000 		.4byte	.LVL16
+ 1617 00c7 0100     		.2byte	0x1
+ 1618 00c9 51       		.byte	0x51
+ 1619 00ca 28000000 		.4byte	.LVL16
+ 1620 00ce 2E000000 		.4byte	.LFE111
+ 1621 00d2 0400     		.2byte	0x4
+ 1622 00d4 F3       		.byte	0xf3
+ 1623 00d5 01       		.uleb128 0x1
+ 1624 00d6 51       		.byte	0x51
+ 1625 00d7 9F       		.byte	0x9f
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 33
+
+
+ 1626 00d8 00000000 		.4byte	0
+ 1627 00dc 00000000 		.4byte	0
+ 1628              	.LLST4:
+ 1629 00e0 00000000 		.4byte	.LVL8
+ 1630 00e4 08000000 		.4byte	.LVL10
+ 1631 00e8 0100     		.2byte	0x1
+ 1632 00ea 52       		.byte	0x52
+ 1633 00eb 08000000 		.4byte	.LVL10
+ 1634 00ef 20000000 		.4byte	.LVL15
+ 1635 00f3 0400     		.2byte	0x4
+ 1636 00f5 F3       		.byte	0xf3
+ 1637 00f6 01       		.uleb128 0x1
+ 1638 00f7 52       		.byte	0x52
+ 1639 00f8 9F       		.byte	0x9f
+ 1640 00f9 20000000 		.4byte	.LVL15
+ 1641 00fd 28000000 		.4byte	.LVL16
+ 1642 0101 0100     		.2byte	0x1
+ 1643 0103 52       		.byte	0x52
+ 1644 0104 28000000 		.4byte	.LVL16
+ 1645 0108 2E000000 		.4byte	.LFE111
+ 1646 010c 0400     		.2byte	0x4
+ 1647 010e F3       		.byte	0xf3
+ 1648 010f 01       		.uleb128 0x1
+ 1649 0110 52       		.byte	0x52
+ 1650 0111 9F       		.byte	0x9f
+ 1651 0112 00000000 		.4byte	0
+ 1652 0116 00000000 		.4byte	0
+ 1653              	.LLST5:
+ 1654 011a 00000000 		.4byte	.LVL8
+ 1655 011e 08000000 		.4byte	.LVL10
+ 1656 0122 0200     		.2byte	0x2
+ 1657 0124 30       		.byte	0x30
+ 1658 0125 9F       		.byte	0x9f
+ 1659 0126 16000000 		.4byte	.LVL11
+ 1660 012a 19000000 		.4byte	.LVL12-1
+ 1661 012e 0100     		.2byte	0x1
+ 1662 0130 53       		.byte	0x53
+ 1663 0131 20000000 		.4byte	.LVL15
+ 1664 0135 28000000 		.4byte	.LVL16
+ 1665 0139 0200     		.2byte	0x2
+ 1666 013b 30       		.byte	0x30
+ 1667 013c 9F       		.byte	0x9f
+ 1668 013d 00000000 		.4byte	0
+ 1669 0141 00000000 		.4byte	0
+ 1670              	.LLST6:
+ 1671 0145 08000000 		.4byte	.LVL10
+ 1672 0149 1C000000 		.4byte	.LVL13
+ 1673 014d 0100     		.2byte	0x1
+ 1674 014f 54       		.byte	0x54
+ 1675 0150 1E000000 		.4byte	.LVL14
+ 1676 0154 20000000 		.4byte	.LVL15
+ 1677 0158 0100     		.2byte	0x1
+ 1678 015a 54       		.byte	0x54
+ 1679 015b 28000000 		.4byte	.LVL16
+ 1680 015f 2E000000 		.4byte	.LFE111
+ 1681 0163 0100     		.2byte	0x1
+ 1682 0165 54       		.byte	0x54
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 34
+
+
+ 1683 0166 00000000 		.4byte	0
+ 1684 016a 00000000 		.4byte	0
+ 1685              	.LLST7:
+ 1686 016e 00000000 		.4byte	.LVL17
+ 1687 0172 19000000 		.4byte	.LVL22-1
+ 1688 0176 0100     		.2byte	0x1
+ 1689 0178 50       		.byte	0x50
+ 1690 0179 19000000 		.4byte	.LVL22-1
+ 1691 017d 28000000 		.4byte	.LVL24
+ 1692 0181 0100     		.2byte	0x1
+ 1693 0183 54       		.byte	0x54
+ 1694 0184 28000000 		.4byte	.LVL24
+ 1695 0188 E2000000 		.4byte	.LVL55
+ 1696 018c 0400     		.2byte	0x4
+ 1697 018e F3       		.byte	0xf3
+ 1698 018f 01       		.uleb128 0x1
+ 1699 0190 50       		.byte	0x50
+ 1700 0191 9F       		.byte	0x9f
+ 1701 0192 E2000000 		.4byte	.LVL55
+ 1702 0196 EA000000 		.4byte	.LVL57
+ 1703 019a 0100     		.2byte	0x1
+ 1704 019c 54       		.byte	0x54
+ 1705 019d EA000000 		.4byte	.LVL57
+ 1706 01a1 FA000000 		.4byte	.LFE112
+ 1707 01a5 0400     		.2byte	0x4
+ 1708 01a7 F3       		.byte	0xf3
+ 1709 01a8 01       		.uleb128 0x1
+ 1710 01a9 50       		.byte	0x50
+ 1711 01aa 9F       		.byte	0x9f
+ 1712 01ab 00000000 		.4byte	0
+ 1713 01af 00000000 		.4byte	0
+ 1714              	.LLST8:
+ 1715 01b3 00000000 		.4byte	.LVL17
+ 1716 01b7 19000000 		.4byte	.LVL22-1
+ 1717 01bb 0100     		.2byte	0x1
+ 1718 01bd 51       		.byte	0x51
+ 1719 01be 19000000 		.4byte	.LVL22-1
+ 1720 01c2 FA000000 		.4byte	.LFE112
+ 1721 01c6 0400     		.2byte	0x4
+ 1722 01c8 F3       		.byte	0xf3
+ 1723 01c9 01       		.uleb128 0x1
+ 1724 01ca 51       		.byte	0x51
+ 1725 01cb 9F       		.byte	0x9f
+ 1726 01cc 00000000 		.4byte	0
+ 1727 01d0 00000000 		.4byte	0
+ 1728              	.LLST9:
+ 1729 01d4 00000000 		.4byte	.LVL17
+ 1730 01d8 16000000 		.4byte	.LVL21
+ 1731 01dc 0100     		.2byte	0x1
+ 1732 01de 52       		.byte	0x52
+ 1733 01df 16000000 		.4byte	.LVL21
+ 1734 01e3 FA000000 		.4byte	.LFE112
+ 1735 01e7 0100     		.2byte	0x1
+ 1736 01e9 59       		.byte	0x59
+ 1737 01ea 00000000 		.4byte	0
+ 1738 01ee 00000000 		.4byte	0
+ 1739              	.LLST10:
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 35
+
+
+ 1740 01f2 00000000 		.4byte	.LVL17
+ 1741 01f6 10000000 		.4byte	.LVL19
+ 1742 01fa 0100     		.2byte	0x1
+ 1743 01fc 53       		.byte	0x53
+ 1744 01fd 10000000 		.4byte	.LVL19
+ 1745 0201 FA000000 		.4byte	.LFE112
+ 1746 0205 0400     		.2byte	0x4
+ 1747 0207 F3       		.byte	0xf3
+ 1748 0208 01       		.uleb128 0x1
+ 1749 0209 53       		.byte	0x53
+ 1750 020a 9F       		.byte	0x9f
+ 1751 020b 00000000 		.4byte	0
+ 1752 020f 00000000 		.4byte	0
+ 1753              	.LLST11:
+ 1754 0213 00000000 		.4byte	.LVL17
+ 1755 0217 D4000000 		.4byte	.LVL52
+ 1756 021b 0200     		.2byte	0x2
+ 1757 021d 91       		.byte	0x91
+ 1758 021e 00       		.sleb128 0
+ 1759 021f D4000000 		.4byte	.LVL52
+ 1760 0223 FA000000 		.4byte	.LFE112
+ 1761 0227 0200     		.2byte	0x2
+ 1762 0229 91       		.byte	0x91
+ 1763 022a 00       		.sleb128 0
+ 1764 022b 00000000 		.4byte	0
+ 1765 022f 00000000 		.4byte	0
+ 1766              	.LLST12:
+ 1767 0233 00000000 		.4byte	.LVL17
+ 1768 0237 D4000000 		.4byte	.LVL52
+ 1769 023b 0200     		.2byte	0x2
+ 1770 023d 91       		.byte	0x91
+ 1771 023e 04       		.sleb128 4
+ 1772 023f D4000000 		.4byte	.LVL52
+ 1773 0243 FA000000 		.4byte	.LFE112
+ 1774 0247 0200     		.2byte	0x2
+ 1775 0249 91       		.byte	0x91
+ 1776 024a 04       		.sleb128 4
+ 1777 024b 00000000 		.4byte	0
+ 1778 024f 00000000 		.4byte	0
+ 1779              	.LLST13:
+ 1780 0253 0E000000 		.4byte	.LVL18
+ 1781 0257 3E000000 		.4byte	.LVL29
+ 1782 025b 0200     		.2byte	0x2
+ 1783 025d 30       		.byte	0x30
+ 1784 025e 9F       		.byte	0x9f
+ 1785 025f 56000000 		.4byte	.LVL30
+ 1786 0263 59000000 		.4byte	.LVL31-1
+ 1787 0267 0100     		.2byte	0x1
+ 1788 0269 53       		.byte	0x53
+ 1789 026a E2000000 		.4byte	.LVL55
+ 1790 026e FA000000 		.4byte	.LFE112
+ 1791 0272 0200     		.2byte	0x2
+ 1792 0274 30       		.byte	0x30
+ 1793 0275 9F       		.byte	0x9f
+ 1794 0276 00000000 		.4byte	0
+ 1795 027a 00000000 		.4byte	0
+ 1796              	.LLST14:
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 36
+
+
+ 1797 027e 0E000000 		.4byte	.LVL18
+ 1798 0282 6A000000 		.4byte	.LVL32
+ 1799 0286 0200     		.2byte	0x2
+ 1800 0288 30       		.byte	0x30
+ 1801 0289 9F       		.byte	0x9f
+ 1802 028a 6A000000 		.4byte	.LVL32
+ 1803 028e A6000000 		.4byte	.LVL44
+ 1804 0292 0100     		.2byte	0x1
+ 1805 0294 54       		.byte	0x54
+ 1806 0295 C4000000 		.4byte	.LVL49
+ 1807 0299 C6000000 		.4byte	.LVL50
+ 1808 029d 0100     		.2byte	0x1
+ 1809 029f 54       		.byte	0x54
+ 1810 02a0 D4000000 		.4byte	.LVL52
+ 1811 02a4 FA000000 		.4byte	.LFE112
+ 1812 02a8 0200     		.2byte	0x2
+ 1813 02aa 30       		.byte	0x30
+ 1814 02ab 9F       		.byte	0x9f
+ 1815 02ac 00000000 		.4byte	0
+ 1816 02b0 00000000 		.4byte	0
+ 1817              	.LLST15:
+ 1818 02b4 0E000000 		.4byte	.LVL18
+ 1819 02b8 A6000000 		.4byte	.LVL44
+ 1820 02bc 0200     		.2byte	0x2
+ 1821 02be 30       		.byte	0x30
+ 1822 02bf 9F       		.byte	0x9f
+ 1823 02c0 BA000000 		.4byte	.LVL45
+ 1824 02c4 BD000000 		.4byte	.LVL46-1
+ 1825 02c8 0100     		.2byte	0x1
+ 1826 02ca 53       		.byte	0x53
+ 1827 02cb C4000000 		.4byte	.LVL49
+ 1828 02cf C6000000 		.4byte	.LVL50
+ 1829 02d3 0200     		.2byte	0x2
+ 1830 02d5 30       		.byte	0x30
+ 1831 02d6 9F       		.byte	0x9f
+ 1832 02d7 D4000000 		.4byte	.LVL52
+ 1833 02db FA000000 		.4byte	.LFE112
+ 1834 02df 0200     		.2byte	0x2
+ 1835 02e1 30       		.byte	0x30
+ 1836 02e2 9F       		.byte	0x9f
+ 1837 02e3 00000000 		.4byte	0
+ 1838 02e7 00000000 		.4byte	0
+ 1839              	.LLST16:
+ 1840 02eb 0E000000 		.4byte	.LVL18
+ 1841 02ef 76000000 		.4byte	.LVL35
+ 1842 02f3 0200     		.2byte	0x2
+ 1843 02f5 30       		.byte	0x30
+ 1844 02f6 9F       		.byte	0x9f
+ 1845 02f7 8A000000 		.4byte	.LVL36
+ 1846 02fb 8D000000 		.4byte	.LVL37-1
+ 1847 02ff 0100     		.2byte	0x1
+ 1848 0301 53       		.byte	0x53
+ 1849 0302 94000000 		.4byte	.LVL40
+ 1850 0306 96000000 		.4byte	.LVL41
+ 1851 030a 0200     		.2byte	0x2
+ 1852 030c 30       		.byte	0x30
+ 1853 030d 9F       		.byte	0x9f
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 37
+
+
+ 1854 030e D4000000 		.4byte	.LVL52
+ 1855 0312 FA000000 		.4byte	.LFE112
+ 1856 0316 0200     		.2byte	0x2
+ 1857 0318 30       		.byte	0x30
+ 1858 0319 9F       		.byte	0x9f
+ 1859 031a 00000000 		.4byte	0
+ 1860 031e 00000000 		.4byte	0
+ 1861              	.LLST17:
+ 1862 0322 14000000 		.4byte	.LVL20
+ 1863 0326 6E000000 		.4byte	.LVL34
+ 1864 032a 0100     		.2byte	0x1
+ 1865 032c 5B       		.byte	0x5b
+ 1866 032d 6E000000 		.4byte	.LVL34
+ 1867 0331 D4000000 		.4byte	.LVL52
+ 1868 0335 0100     		.2byte	0x1
+ 1869 0337 56       		.byte	0x56
+ 1870 0338 D4000000 		.4byte	.LVL52
+ 1871 033c FA000000 		.4byte	.LFE112
+ 1872 0340 0100     		.2byte	0x1
+ 1873 0342 5B       		.byte	0x5b
+ 1874 0343 00000000 		.4byte	0
+ 1875 0347 00000000 		.4byte	0
+ 1876              	.LLST18:
+ 1877 034b 1A000000 		.4byte	.LVL22
+ 1878 034f 24000000 		.4byte	.LVL23
+ 1879 0353 0100     		.2byte	0x1
+ 1880 0355 50       		.byte	0x50
+ 1881 0356 E2000000 		.4byte	.LVL55
+ 1882 035a E6000000 		.4byte	.LVL56
+ 1883 035e 0100     		.2byte	0x1
+ 1884 0360 50       		.byte	0x50
+ 1885 0361 00000000 		.4byte	0
+ 1886 0365 00000000 		.4byte	0
+ 1887              	.LLST19:
+ 1888 0369 2A000000 		.4byte	.LVL25
+ 1889 036d 6C000000 		.4byte	.LVL33
+ 1890 0371 0100     		.2byte	0x1
+ 1891 0373 55       		.byte	0x55
+ 1892 0374 D4000000 		.4byte	.LVL52
+ 1893 0378 E2000000 		.4byte	.LVL55
+ 1894 037c 0100     		.2byte	0x1
+ 1895 037e 55       		.byte	0x55
+ 1896 037f EA000000 		.4byte	.LVL57
+ 1897 0383 FA000000 		.4byte	.LFE112
+ 1898 0387 0100     		.2byte	0x1
+ 1899 0389 55       		.byte	0x55
+ 1900 038a 00000000 		.4byte	0
+ 1901 038e 00000000 		.4byte	0
+ 1902              	.LLST20:
+ 1903 0392 2A000000 		.4byte	.LVL25
+ 1904 0396 2E000000 		.4byte	.LVL26
+ 1905 039a 0200     		.2byte	0x2
+ 1906 039c 30       		.byte	0x30
+ 1907 039d 9F       		.byte	0x9f
+ 1908 039e 2E000000 		.4byte	.LVL26
+ 1909 03a2 30000000 		.4byte	.LVL27
+ 1910 03a6 0100     		.2byte	0x1
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 38
+
+
+ 1911 03a8 56       		.byte	0x56
+ 1912 03a9 30000000 		.4byte	.LVL27
+ 1913 03ad 32000000 		.4byte	.LVL28
+ 1914 03b1 0200     		.2byte	0x2
+ 1915 03b3 30       		.byte	0x30
+ 1916 03b4 9F       		.byte	0x9f
+ 1917 03b5 32000000 		.4byte	.LVL28
+ 1918 03b9 6E000000 		.4byte	.LVL34
+ 1919 03bd 0100     		.2byte	0x1
+ 1920 03bf 56       		.byte	0x56
+ 1921 03c0 D4000000 		.4byte	.LVL52
+ 1922 03c4 E2000000 		.4byte	.LVL55
+ 1923 03c8 0100     		.2byte	0x1
+ 1924 03ca 56       		.byte	0x56
+ 1925 03cb EA000000 		.4byte	.LVL57
+ 1926 03cf FA000000 		.4byte	.LFE112
+ 1927 03d3 0100     		.2byte	0x1
+ 1928 03d5 56       		.byte	0x56
+ 1929 03d6 00000000 		.4byte	0
+ 1930 03da 00000000 		.4byte	0
+ 1931              	.LLST21:
+ 1932 03de 3E000000 		.4byte	.LVL29
+ 1933 03e2 6A000000 		.4byte	.LVL32
+ 1934 03e6 0100     		.2byte	0x1
+ 1935 03e8 54       		.byte	0x54
+ 1936 03e9 D4000000 		.4byte	.LVL52
+ 1937 03ed D6000000 		.4byte	.LVL53
+ 1938 03f1 0100     		.2byte	0x1
+ 1939 03f3 54       		.byte	0x54
+ 1940 03f4 D8000000 		.4byte	.LVL54
+ 1941 03f8 E2000000 		.4byte	.LVL55
+ 1942 03fc 0100     		.2byte	0x1
+ 1943 03fe 54       		.byte	0x54
+ 1944 03ff 00000000 		.4byte	0
+ 1945 0403 00000000 		.4byte	0
+ 1946              	.LLST22:
+ 1947 0407 76000000 		.4byte	.LVL35
+ 1948 040b 90000000 		.4byte	.LVL38
+ 1949 040f 0100     		.2byte	0x1
+ 1950 0411 55       		.byte	0x55
+ 1951 0412 92000000 		.4byte	.LVL39
+ 1952 0416 94000000 		.4byte	.LVL40
+ 1953 041a 0100     		.2byte	0x1
+ 1954 041c 55       		.byte	0x55
+ 1955 041d 96000000 		.4byte	.LVL41
+ 1956 0421 9A000000 		.4byte	.LVL42
+ 1957 0425 0100     		.2byte	0x1
+ 1958 0427 55       		.byte	0x55
+ 1959 0428 00000000 		.4byte	0
+ 1960 042c 00000000 		.4byte	0
+ 1961              	.LLST23:
+ 1962 0430 A6000000 		.4byte	.LVL44
+ 1963 0434 C0000000 		.4byte	.LVL47
+ 1964 0438 0100     		.2byte	0x1
+ 1965 043a 54       		.byte	0x54
+ 1966 043b C2000000 		.4byte	.LVL48
+ 1967 043f C4000000 		.4byte	.LVL49
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 39
+
+
+ 1968 0443 0100     		.2byte	0x1
+ 1969 0445 54       		.byte	0x54
+ 1970 0446 C6000000 		.4byte	.LVL50
+ 1971 044a CA000000 		.4byte	.LVL51
+ 1972 044e 0100     		.2byte	0x1
+ 1973 0450 54       		.byte	0x54
+ 1974 0451 00000000 		.4byte	0
+ 1975 0455 00000000 		.4byte	0
+ 1976              		.section	.debug_aranges,"",%progbits
+ 1977 0000 2C000000 		.4byte	0x2c
+ 1978 0004 0200     		.2byte	0x2
+ 1979 0006 00000000 		.4byte	.Ldebug_info0
+ 1980 000a 04       		.byte	0x4
+ 1981 000b 00       		.byte	0
+ 1982 000c 0000     		.2byte	0
+ 1983 000e 0000     		.2byte	0
+ 1984 0010 00000000 		.4byte	.LFB110
+ 1985 0014 26000000 		.4byte	.LFE110-.LFB110
+ 1986 0018 00000000 		.4byte	.LFB111
+ 1987 001c 2E000000 		.4byte	.LFE111-.LFB111
+ 1988 0020 00000000 		.4byte	.LFB112
+ 1989 0024 FA000000 		.4byte	.LFE112-.LFB112
+ 1990 0028 00000000 		.4byte	0
+ 1991 002c 00000000 		.4byte	0
+ 1992              		.section	.debug_ranges,"",%progbits
+ 1993              	.Ldebug_ranges0:
+ 1994 0000 08000000 		.4byte	.LBB3
+ 1995 0004 20000000 		.4byte	.LBE3
+ 1996 0008 28000000 		.4byte	.LBB4
+ 1997 000c 2C000000 		.4byte	.LBE4
+ 1998 0010 00000000 		.4byte	0
+ 1999 0014 00000000 		.4byte	0
+ 2000 0018 3E000000 		.4byte	.LBB5
+ 2001 001c CE000000 		.4byte	.LBE5
+ 2002 0020 D0000000 		.4byte	.LBB10
+ 2003 0024 DC000000 		.4byte	.LBE10
+ 2004 0028 DE000000 		.4byte	.LBB11
+ 2005 002c E2000000 		.4byte	.LBE11
+ 2006 0030 00000000 		.4byte	0
+ 2007 0034 00000000 		.4byte	0
+ 2008 0038 74000000 		.4byte	.LBB6
+ 2009 003c 94000000 		.4byte	.LBE6
+ 2010 0040 96000000 		.4byte	.LBB7
+ 2011 0044 9A000000 		.4byte	.LBE7
+ 2012 0048 00000000 		.4byte	0
+ 2013 004c 00000000 		.4byte	0
+ 2014 0050 A4000000 		.4byte	.LBB8
+ 2015 0054 C4000000 		.4byte	.LBE8
+ 2016 0058 C6000000 		.4byte	.LBB9
+ 2017 005c CA000000 		.4byte	.LBE9
+ 2018 0060 00000000 		.4byte	0
+ 2019 0064 00000000 		.4byte	0
+ 2020 0068 00000000 		.4byte	.LFB110
+ 2021 006c 26000000 		.4byte	.LFE110
+ 2022 0070 00000000 		.4byte	.LFB111
+ 2023 0074 2E000000 		.4byte	.LFE111
+ 2024 0078 00000000 		.4byte	.LFB112
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 40
+
+
+ 2025 007c FA000000 		.4byte	.LFE112
+ 2026 0080 00000000 		.4byte	0
+ 2027 0084 00000000 		.4byte	0
+ 2028              		.section	.debug_line,"",%progbits
+ 2029              	.Ldebug_line0:
+ 2030 0000 34030000 		.section	.debug_str,"MS",%progbits,1
+ 2030      02005302 
+ 2030      00000201 
+ 2030      FB0E0D00 
+ 2030      01010101 
+ 2031              	.LASF63:
+ 2032 0000 45565F32 		.ascii	"EV_250MS\000"
+ 2032      35304D53 
+ 2032      00
+ 2033              	.LASF86:
+ 2034 0009 72657375 		.ascii	"result\000"
+ 2034      6C7400
+ 2035              	.LASF76:
+ 2036 0010 66726F6D 		.ascii	"fromState\000"
+ 2036      53746174 
+ 2036      6500
+ 2037              	.LASF39:
+ 2038 001a 52435F45 		.ascii	"RC_ERROR_READ_ONLY\000"
+ 2038      52524F52 
+ 2038      5F524541 
+ 2038      445F4F4E 
+ 2038      4C5900
+ 2039              	.LASF25:
+ 2040 002d 52435F53 		.ascii	"RC_SUCCESS\000"
+ 2040      55434345 
+ 2040      535300
+ 2041              	.LASF61:
+ 2042 0038 45565F4B 		.ascii	"EV_KEYRIGHT\000"
+ 2042      45595249 
+ 2042      47485400 
+ 2043              	.LASF79:
+ 2044 0044 53544154 		.ascii	"STATE_stateOuterTransition_t\000"
+ 2044      455F7374 
+ 2044      6174654F 
+ 2044      75746572 
+ 2044      5472616E 
+ 2045              	.LASF40:
+ 2046 0061 52435F45 		.ascii	"RC_ERROR_WRITE_ONLY\000"
+ 2046      52524F52 
+ 2046      5F575249 
+ 2046      54455F4F 
+ 2046      4E4C5900 
+ 2047              	.LASF73:
+ 2048 0075 67756172 		.ascii	"guard\000"
+ 2048      6400
+ 2049              	.LASF2:
+ 2050 007b 73686F72 		.ascii	"short int\000"
+ 2050      7420696E 
+ 2050      7400
+ 2051              	.LASF31:
+ 2052 0085 52435F45 		.ascii	"RC_ERROR_OVERRUN\000"
+ 2052      52524F52 
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 41
+
+
+ 2052      5F4F5645 
+ 2052      5252554E 
+ 2052      00
+ 2053              	.LASF43:
+ 2054 0096 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
+ 2054      52524F52 
+ 2054      5F575249 
+ 2054      54455F46 
+ 2054      41494C53 
+ 2055              	.LASF22:
+ 2056 00ab 73697A65 		.ascii	"sizetype\000"
+ 2056      74797065 
+ 2056      00
+ 2057              	.LASF103:
+ 2058 00b4 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 2058      52515F6E 
+ 2058      65737469 
+ 2058      6E675F6C 
+ 2058      6576656C 
+ 2059              	.LASF28:
+ 2060 00c9 52435F45 		.ascii	"RC_ERROR_ZERO\000"
+ 2060      52524F52 
+ 2060      5F5A4552 
+ 2060      4F00
+ 2061              	.LASF20:
+ 2062 00d7 45455F46 		.ascii	"EE_FREG\000"
+ 2062      52454700 
+ 2063              	.LASF42:
+ 2064 00df 52435F45 		.ascii	"RC_ERROR_READ_FAILS\000"
+ 2064      52524F52 
+ 2064      5F524541 
+ 2064      445F4641 
+ 2064      494C5300 
+ 2065              	.LASF91:
+ 2066 00f3 6163456E 		.ascii	"acEntry\000"
+ 2066      74727900 
+ 2067              	.LASF18:
+ 2068 00fb 45455F55 		.ascii	"EE_UINT32\000"
+ 2068      494E5433 
+ 2068      3200
+ 2069              	.LASF4:
+ 2070 0105 5F5F7569 		.ascii	"__uint16_t\000"
+ 2070      6E743136 
+ 2070      5F7400
+ 2071              	.LASF52:
+ 2072 0110 53544154 		.ascii	"STATE_CLOCK_C_ISDISPLAYING\000"
+ 2072      455F434C 
+ 2072      4F434B5F 
+ 2072      435F4953 
+ 2072      44495350 
+ 2073              	.LASF21:
+ 2074 012b 45455F54 		.ascii	"EE_TID\000"
+ 2074      494400
+ 2075              	.LASF58:
+ 2076 0132 434C4F43 		.ascii	"CLOCK_State_t\000"
+ 2076      4B5F5374 
+ 2076      6174655F 
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 42
+
+
+ 2076      7400
+ 2077              	.LASF68:
+ 2078 0140 53544154 		.ascii	"STATE_Event_t\000"
+ 2078      455F4576 
+ 2078      656E745F 
+ 2078      7400
+ 2079              	.LASF96:
+ 2080 014e 696E6465 		.ascii	"index\000"
+ 2080      7800
+ 2081              	.LASF48:
+ 2082 0154 52435F45 		.ascii	"RC_ERROR_INVALID_STATE\000"
+ 2082      52524F52 
+ 2082      5F494E56 
+ 2082      414C4944 
+ 2082      5F535441 
+ 2083              	.LASF106:
+ 2084 016b 536F7572 		.ascii	"SourceFiles\\asw\\clock_statemachine.c\000"
+ 2084      63654669 
+ 2084      6C65735C 
+ 2084      6173775C 
+ 2084      636C6F63 
+ 2085              	.LASF64:
+ 2086 0190 45565F31 		.ascii	"EV_1MIN\000"
+ 2086      4D494E00 
+ 2087              	.LASF55:
+ 2088 0198 53544154 		.ascii	"STATE_CLOCK_W_ISDISPLAYING\000"
+ 2088      455F434C 
+ 2088      4F434B5F 
+ 2088      575F4953 
+ 2088      44495350 
+ 2089              	.LASF102:
+ 2090 01b3 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 2090      74645F65 
+ 2090      6E646379 
+ 2090      636C655F 
+ 2090      6E657874 
+ 2091              	.LASF30:
+ 2092 01cc 52435F45 		.ascii	"RC_ERROR_RANGE\000"
+ 2092      52524F52 
+ 2092      5F52414E 
+ 2092      474500
+ 2093              	.LASF69:
+ 2094 01db 53544154 		.ascii	"STATE_ActionPtr_t\000"
+ 2094      455F4163 
+ 2094      74696F6E 
+ 2094      5074725F 
+ 2094      7400
+ 2095              	.LASF13:
+ 2096 01ed 666C6F61 		.ascii	"float\000"
+ 2096      7400
+ 2097              	.LASF50:
+ 2098 01f3 52435F45 		.ascii	"RC_ERROR_NOT_IMPLEMENTED\000"
+ 2098      52524F52 
+ 2098      5F4E4F54 
+ 2098      5F494D50 
+ 2098      4C454D45 
+ 2099              	.LASF8:
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 43
+
+
+ 2100 020c 6C6F6E67 		.ascii	"long long int\000"
+ 2100      206C6F6E 
+ 2100      6720696E 
+ 2100      7400
+ 2101              	.LASF85:
+ 2102 021a 7472616E 		.ascii	"transitionTableSize\000"
+ 2102      73697469 
+ 2102      6F6E5461 
+ 2102      626C6553 
+ 2102      697A6500 
+ 2103              	.LASF100:
+ 2104 022e 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 2104      6F5F4952 
+ 2104      515F7375 
+ 2104      7370656E 
+ 2104      645F7374 
+ 2105              	.LASF44:
+ 2106 0247 52435F45 		.ascii	"RC_ERROR_NOT_MATCH\000"
+ 2106      52524F52 
+ 2106      5F4E4F54 
+ 2106      5F4D4154 
+ 2106      434800
+ 2107              	.LASF49:
+ 2108 025a 52435F45 		.ascii	"RC_ERROR_UNKNOWN\000"
+ 2108      52524F52 
+ 2108      5F554E4B 
+ 2108      4E4F574E 
+ 2108      00
+ 2109              	.LASF23:
+ 2110 026b 73696E74 		.ascii	"sint16_t\000"
+ 2110      31365F74 
+ 2110      00
+ 2111              	.LASF6:
+ 2112 0274 6C6F6E67 		.ascii	"long int\000"
+ 2112      20696E74 
+ 2112      00
+ 2113              	.LASF32:
+ 2114 027d 52435F45 		.ascii	"RC_ERROR_UNDERRUN\000"
+ 2114      52524F52 
+ 2114      5F554E44 
+ 2114      45525255 
+ 2114      4E00
+ 2115              	.LASF77:
+ 2116 028f 70496E6E 		.ascii	"pInnerTransitionTable\000"
+ 2116      65725472 
+ 2116      616E7369 
+ 2116      74696F6E 
+ 2116      5461626C 
+ 2117              	.LASF87:
+ 2118 02a5 53544154 		.ascii	"STATE__getIndexCurrentState\000"
+ 2118      455F5F67 
+ 2118      6574496E 
+ 2118      64657843 
+ 2118      75727265 
+ 2119              	.LASF35:
+ 2120 02c1 52435F45 		.ascii	"RC_ERROR_BUSY\000"
+ 2120      52524F52 
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 44
+
+
+ 2120      5F425553 
+ 2120      5900
+ 2121              	.LASF82:
+ 2122 02cf 61637469 		.ascii	"actionExit\000"
+ 2122      6F6E4578 
+ 2122      697400
+ 2123              	.LASF41:
+ 2124 02da 52435F45 		.ascii	"RC_ERROR_INVALID\000"
+ 2124      52524F52 
+ 2124      5F494E56 
+ 2124      414C4944 
+ 2124      00
+ 2125              	.LASF46:
+ 2126 02eb 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
+ 2126      52524F52 
+ 2126      5F424144 
+ 2126      5F444154 
+ 2126      4100
+ 2127              	.LASF24:
+ 2128 02fd 626F6F6C 		.ascii	"boolean_t\000"
+ 2128      65616E5F 
+ 2128      7400
+ 2129              	.LASF80:
+ 2130 0307 73746174 		.ascii	"state\000"
+ 2130      6500
+ 2131              	.LASF16:
+ 2132 030d 6C6F6E67 		.ascii	"long double\000"
+ 2132      20646F75 
+ 2132      626C6500 
+ 2133              	.LASF1:
+ 2134 0319 756E7369 		.ascii	"unsigned char\000"
+ 2134      676E6564 
+ 2134      20636861 
+ 2134      7200
+ 2135              	.LASF88:
+ 2136 0327 53544154 		.ascii	"STATE_initState\000"
+ 2136      455F696E 
+ 2136      69745374 
+ 2136      61746500 
+ 2137              	.LASF66:
+ 2138 0337 4556454E 		.ascii	"EVENT_t\000"
+ 2138      545F7400 
+ 2139              	.LASF98:
+ 2140 033f 696E6E65 		.ascii	"innerTableSize\000"
+ 2140      72546162 
+ 2140      6C655369 
+ 2140      7A6500
+ 2141              	.LASF0:
+ 2142 034e 7369676E 		.ascii	"signed char\000"
+ 2142      65642063 
+ 2142      68617200 
+ 2143              	.LASF9:
+ 2144 035a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2144      206C6F6E 
+ 2144      6720756E 
+ 2144      7369676E 
+ 2144      65642069 
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 45
+
+
+ 2145              	.LASF10:
+ 2146 0371 756E7369 		.ascii	"unsigned int\000"
+ 2146      676E6564 
+ 2146      20696E74 
+ 2146      00
+ 2147              	.LASF37:
+ 2148 037e 52435F45 		.ascii	"RC_ERROR_OPEN\000"
+ 2148      52524F52 
+ 2148      5F4F5045 
+ 2148      4E00
+ 2149              	.LASF11:
+ 2150 038c 75696E74 		.ascii	"uint16_t\000"
+ 2150      31365F74 
+ 2150      00
+ 2151              	.LASF7:
+ 2152 0395 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2152      20756E73 
+ 2152      69676E65 
+ 2152      6420696E 
+ 2152      7400
+ 2153              	.LASF27:
+ 2154 03a7 52435F45 		.ascii	"RC_ERROR_NULL\000"
+ 2154      52524F52 
+ 2154      5F4E554C 
+ 2154      4C00
+ 2155              	.LASF84:
+ 2156 03b5 7472616E 		.ascii	"transitionTable\000"
+ 2156      73697469 
+ 2156      6F6E5461 
+ 2156      626C6500 
+ 2157              	.LASF17:
+ 2158 03c5 45455F49 		.ascii	"EE_INT32\000"
+ 2158      4E543332 
+ 2158      00
+ 2159              	.LASF54:
+ 2160 03ce 53544154 		.ascii	"STATE_CLOCK_C_ISEDITINGHOURS\000"
+ 2160      455F434C 
+ 2160      4F434B5F 
+ 2160      435F4953 
+ 2160      45444954 
+ 2161              	.LASF70:
+ 2162 03eb 53544154 		.ascii	"STATE_GuardPtr_t\000"
+ 2162      455F4775 
+ 2162      61726450 
+ 2162      74725F74 
+ 2162      00
+ 2163              	.LASF53:
+ 2164 03fc 53544154 		.ascii	"STATE_CLOCK_C_ISEDITINGMINUTES\000"
+ 2164      455F434C 
+ 2164      4F434B5F 
+ 2164      435F4953 
+ 2164      45444954 
+ 2165              	.LASF105:
+ 2166 041b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2166      43313120 
+ 2166      352E342E 
+ 2166      31203230 
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 46
+
+
+ 2166      31363036 
+ 2167 044e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2167      20726576 
+ 2167      6973696F 
+ 2167      6E203233 
+ 2167      37373135 
+ 2168 0481 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2168      66756E63 
+ 2168      74696F6E 
+ 2168      2D736563 
+ 2168      74696F6E 
+ 2169              	.LASF90:
+ 2170 04a9 61637469 		.ascii	"actionTableSize\000"
+ 2170      6F6E5461 
+ 2170      626C6553 
+ 2170      697A6500 
+ 2171              	.LASF75:
+ 2172 04b9 53544154 		.ascii	"STATE_stateInnerTransition_t\000"
+ 2172      455F7374 
+ 2172      61746549 
+ 2172      6E6E6572 
+ 2172      5472616E 
+ 2173              	.LASF15:
+ 2174 04d6 63686172 		.ascii	"char\000"
+ 2174      00
+ 2175              	.LASF92:
+ 2176 04db 53544154 		.ascii	"STATE_processEvent\000"
+ 2176      455F7072 
+ 2176      6F636573 
+ 2176      73457665 
+ 2176      6E7400
+ 2177              	.LASF33:
+ 2178 04ee 52435F45 		.ascii	"RC_ERROR_BUFFER_FULL\000"
+ 2178      52524F52 
+ 2178      5F425546 
+ 2178      4645525F 
+ 2178      46554C4C 
+ 2179              	.LASF12:
+ 2180 0503 696E7433 		.ascii	"int32_t\000"
+ 2180      325F7400 
+ 2181              	.LASF95:
+ 2182 050b 63757272 		.ascii	"currentState\000"
+ 2182      656E7453 
+ 2182      74617465 
+ 2182      00
+ 2183              	.LASF3:
+ 2184 0518 73686F72 		.ascii	"short unsigned int\000"
+ 2184      7420756E 
+ 2184      7369676E 
+ 2184      65642069 
+ 2184      6E7400
+ 2185              	.LASF57:
+ 2186 052b 53544154 		.ascii	"STATE_CLOCK_W_ISAUTOINCREMENT\000"
+ 2186      455F434C 
+ 2186      4F434B5F 
+ 2186      575F4953 
+ 2186      4155544F 
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 47
+
+
+ 2187              	.LASF45:
+ 2188 0549 52435F45 		.ascii	"RC_ERROR_BAD_PARAM\000"
+ 2188      52524F52 
+ 2188      5F424144 
+ 2188      5F504152 
+ 2188      414D00
+ 2189              	.LASF67:
+ 2190 055c 53544154 		.ascii	"STATE_State_t\000"
+ 2190      455F5374 
+ 2190      6174655F 
+ 2190      7400
+ 2191              	.LASF74:
+ 2192 056a 61637469 		.ascii	"actionTransition\000"
+ 2192      6F6E5472 
+ 2192      616E7369 
+ 2192      74696F6E 
+ 2192      00
+ 2193              	.LASF71:
+ 2194 057b 6576656E 		.ascii	"event\000"
+ 2194      7400
+ 2195              	.LASF101:
+ 2196 0581 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 2196      70706C69 
+ 2196      63617469 
+ 2196      6F6E4D6F 
+ 2196      646500
+ 2197              	.LASF89:
+ 2198 0594 61637469 		.ascii	"actionTable\000"
+ 2198      6F6E5461 
+ 2198      626C6500 
+ 2199              	.LASF14:
+ 2200 05a0 646F7562 		.ascii	"double\000"
+ 2200      6C6500
+ 2201              	.LASF65:
+ 2202 05a7 45565F45 		.ascii	"EV_ERROR\000"
+ 2202      52524F52 
+ 2202      00
+ 2203              	.LASF38:
+ 2204 05b0 52435F45 		.ascii	"RC_ERROR_CHECKSUM\000"
+ 2204      52524F52 
+ 2204      5F434845 
+ 2204      434B5355 
+ 2204      4D00
+ 2205              	.LASF19:
+ 2206 05c2 45455F55 		.ascii	"EE_UREG\000"
+ 2206      52454700 
+ 2207              	.LASF78:
+ 2208 05ca 73697A65 		.ascii	"size\000"
+ 2208      00
+ 2209              	.LASF83:
+ 2210 05cf 53544154 		.ascii	"STATE_stateAction_t\000"
+ 2210      455F7374 
+ 2210      61746541 
+ 2210      6374696F 
+ 2210      6E5F7400 
+ 2211              	.LASF5:
+ 2212 05e3 5F5F696E 		.ascii	"__int32_t\000"
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 48
+
+
+ 2212      7433325F 
+ 2212      7400
+ 2213              	.LASF59:
+ 2214 05ed 45565F4E 		.ascii	"EV_NONE\000"
+ 2214      4F4E4500 
+ 2215              	.LASF62:
+ 2216 05f5 45565F4B 		.ascii	"EV_KEYRIGHTLONGPRESS\000"
+ 2216      45595249 
+ 2216      4748544C 
+ 2216      4F4E4750 
+ 2216      52455353 
+ 2217              	.LASF60:
+ 2218 060a 45565F4B 		.ascii	"EV_KEYLEFT\000"
+ 2218      45594C45 
+ 2218      465400
+ 2219              	.LASF94:
+ 2220 0615 61634578 		.ascii	"acExit\000"
+ 2220      697400
+ 2221              	.LASF107:
+ 2222 061c 433A5C4A 		.ascii	"C:\\Jason\\EIT\\Semester_02\\01_EAA\\Lab\\Assignmen"
+ 2222      61736F6E 
+ 2222      5C454954 
+ 2222      5C53656D 
+ 2222      65737465 
+ 2223 0649 745F325C 		.ascii	"t_2\\ElectronicClock\\ElectronicClock.cydsn\000"
+ 2223      456C6563 
+ 2223      74726F6E 
+ 2223      6963436C 
+ 2223      6F636B5C 
+ 2224              	.LASF47:
+ 2225 0673 52435F45 		.ascii	"RC_ERROR_CANCELED\000"
+ 2225      52524F52 
+ 2225      5F43414E 
+ 2225      43454C45 
+ 2225      4400
+ 2226              	.LASF93:
+ 2227 0685 61635472 		.ascii	"acTransition\000"
+ 2227      616E7369 
+ 2227      74696F6E 
+ 2227      00
+ 2228              	.LASF97:
+ 2229 0692 70496E6E 		.ascii	"pInnerTable\000"
+ 2229      65725461 
+ 2229      626C6500 
+ 2230              	.LASF104:
+ 2231 069e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2231      52784275 
+ 2231      66666572 
+ 2231      00
+ 2232              	.LASF26:
+ 2233 06ab 52435F45 		.ascii	"RC_ERROR\000"
+ 2233      52524F52 
+ 2233      00
+ 2234              	.LASF29:
+ 2235 06b4 52435F45 		.ascii	"RC_ERROR_MEMORY\000"
+ 2235      52524F52 
+ 2235      5F4D454D 
+ARM GAS  C:\Users\JASON\AppData\Local\Temp\ccILyZbW.s 			page 49
+
+
+ 2235      4F525900 
+ 2236              	.LASF99:
+ 2237 06c4 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 2237      6F5F4952 
+ 2237      515F6469 
+ 2237      7361626C 
+ 2237      655F636F 
+ 2238              	.LASF81:
+ 2239 06dc 61637469 		.ascii	"actionEntry\000"
+ 2239      6F6E456E 
+ 2239      74727900 
+ 2240              	.LASF56:
+ 2241 06e8 53544154 		.ascii	"STATE_CLOCK_W_ISEDITING\000"
+ 2241      455F434C 
+ 2241      4F434B5F 
+ 2241      575F4953 
+ 2241      45444954 
+ 2242              	.LASF72:
+ 2243 0700 746F5374 		.ascii	"toState\000"
+ 2243      61746500 
+ 2244              	.LASF34:
+ 2245 0708 52435F45 		.ascii	"RC_ERROR_BUFFER_EMTPY\000"
+ 2245      52524F52 
+ 2245      5F425546 
+ 2245      4645525F 
+ 2245      454D5450 
+ 2246              	.LASF51:
+ 2247 071e 52435F74 		.ascii	"RC_t\000"
+ 2247      00
+ 2248              	.LASF36:
+ 2249 0723 52435F45 		.ascii	"RC_ERROR_TIME_OUT\000"
+ 2249      52524F52 
+ 2249      5F54494D 
+ 2249      455F4F55 
+ 2249      5400
+ 2250              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

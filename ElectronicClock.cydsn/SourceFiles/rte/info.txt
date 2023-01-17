@@ -1,0 +1,120 @@
+signalclasses:
+    sc_CLOCK:
+        datatrigger: 
+    sc_EVENT:
+        datatrigger:
+
+signalpools:
+    sp_common:
+        start: ADR_SP_COMMON_START
+        end: ADR_SP_COMMON_END
+        signals:
+            so_CLOCK:
+                    class: sc_CLOCK
+                    inDriver: 0
+                    outDriver: default
+                    onDataUpdate: 0
+                    onDataUpdateTask: 
+                    onDataError: 0
+                    onDataErrorTask: 
+            so_EVENT:
+                    class: sc_EVENT
+                    inDriver: default
+                    outDriver: 0
+                    onDataUpdate: ev_event_onData
+                    onDataUpdateTask: 
+                    onDataError: 0
+                    onDataErrorTask:
+
+tasks:
+    tsk_input:
+        timertickperiod: 1
+        mode: Cyclic
+        signalpoolsRO: sp_common
+        signalpoolsRW: sp_common
+        events: 
+        runnables:
+                CLOCK_INPUT__run:
+                    task: tsk_input
+                    cycletime: 50
+                    events: 
+                    signalIN: 
+                    signalOUT: so_EVENT
+            
+    tsk_control:
+        timertickperiod: 0
+        mode: Event
+        signalpoolsRO: sp_common
+        signalpoolsRW: sp_common
+        events: ev_event_onData
+        runnables:
+                CLOCK_CONTROL__run:
+                    task: tsk_control
+                    cycletime: 0
+                    events: ev_event_onData
+                    signalIN: so_EVENT
+                    signalOUT: so_CLOCK
+            
+                CLOCK_CONTROL_init_run:
+                    task: tsk_control
+                    cycletime: 0
+                    events: 
+                    signalIN: 
+                    signalOUT: 
+            
+    tsk_system:
+        timertickperiod: 1
+        mode: System
+        signalpoolsRO: sp_common
+        signalpoolsRW: sp_common
+        events: 
+        runnables:
+    tsk_display:
+        timertickperiod: 1
+        mode: Cyclic
+        signalpoolsRO: sp_common
+        signalpoolsRW: sp_common
+        events: 
+        runnables:
+                CLOCK_DISPLAY__run:
+                    task: tsk_display
+                    cycletime: 250
+                    events: 
+                    signalIN: so_CLOCK
+                    signalOUT:
+
+swc:
+    swc_CLOCK_input:
+        runnables:
+                CLOCK_INPUT__run:
+                    task: tsk_input
+                    cycletime: 50
+                    events: 
+                    signalIN: 
+                    signalOUT: so_EVENT
+            
+    swc_CLOCK_control:
+        runnables:
+                CLOCK_CONTROL__run:
+                    task: tsk_control
+                    cycletime: 0
+                    events: ev_event_onData
+                    signalIN: so_EVENT
+                    signalOUT: so_CLOCK
+            
+                CLOCK_CONTROL_init_run:
+                    task: tsk_control
+                    cycletime: 0
+                    events: 
+                    signalIN: 
+                    signalOUT: 
+            
+    swc_CLOCK_display:
+        runnables:
+                CLOCK_DISPLAY__run:
+                    task: tsk_display
+                    cycletime: 250
+                    events: 
+                    signalIN: so_CLOCK
+                    signalOUT:
+

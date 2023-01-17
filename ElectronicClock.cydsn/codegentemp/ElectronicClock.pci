@@ -1,0 +1,15 @@
+# ElectronicClock
+# 2022-07-01 22:48:27Z
+
+set_io "Rx_LOG(0)" iocell 12 6
+set_io "Tx_LOG(0)" iocell 12 7
+set_io "button_1(0)" iocell 0 3
+set_io "button_2(0)" iocell 0 4
+set_io "button_3(0)" iocell 0 5
+set_io "button_4(0)" iocell 3 2
+set_io "TFT_SDA(0)" iocell 12 5
+set_io "TFT_LED(0)" iocell 12 2
+set_io "TFT_CS(0)" iocell 3 3
+set_io "TFT_RES(0)" iocell 3 4
+set_io "TFT_DC(0)" iocell 12 3
+set_io "TFT_SCL(0)" iocell 12 4

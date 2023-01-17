@@ -1,0 +1,192 @@
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CLK_LED.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyLib.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CySpc.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ISR_definition.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_compiler_gcc.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_hal_structs.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_irqstub.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_primitives.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_types.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_context.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_cpu.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_irq.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_nvic.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_systick.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_api.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_as_kernel.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_as_timing_prot.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_irq.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_api.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_common.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_inline.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_intfunc.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_irq.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_kernel.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_rtdruid_versions.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_tracing.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_eecfg.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_event_definition.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_BackLight.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_CS.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_CS_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_DC.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_DC_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_LED.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_LED_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_RES.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_RES_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SCL.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SCL_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SDA.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SDA_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI_IntClock.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI_PVT.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/UART_LOG.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/UART_LOG_IntClock.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_1.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_1_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_2.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_2_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_3.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_3_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_4.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_4_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyPm.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevice.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cypins.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cytypes.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/isr_ButtonLeft.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/isr_ButtonRight.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/project.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/derivate.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/global.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/tft/tft.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/rte.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/rte_types.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_clock.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_clock_type.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_event.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_event_type.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sp_common.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/clock_statemachine.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/clock_statemachine_cfg.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/common.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/main.c C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/swc_clock_control.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/tsk_background.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/tsk_control.h 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CLK_LED.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ISR_definition.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_compiler_gcc.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_hal_structs.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_irqstub.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_primitives.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_types.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_context.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_cpu.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_irq.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_nvic.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_systick.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_api.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_as_kernel.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_as_timing_prot.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_irq.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_api.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_common.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_inline.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_intfunc.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_irq.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_kernel.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_rtdruid_versions.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_tracing.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_eecfg.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_event_definition.inc : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_BackLight.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_CS.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_CS_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_DC.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_DC_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_LED.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_LED_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_RES.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_RES_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SCL.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SCL_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SDA.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SDA_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI_IntClock.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI_PVT.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/UART_LOG.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/UART_LOG_IntClock.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_1.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_1_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_2.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_2_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_3.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_3_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_4.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_4_aliases.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/isr_ButtonLeft.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/isr_ButtonRight.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/project.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/derivate.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/global.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/tft/tft.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/rte.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/rte_types.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_clock.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_clock_type.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_event.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_event_type.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sp_common.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/clock_statemachine.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/clock_statemachine_cfg.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/common.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/main.c : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/swc_clock_control.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/tsk_background.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/tsk_control.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/CortexM3/ARM_GCC_541/Debug/swc_clock_control.o : C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CLK_LED.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CyLib.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/CySpc.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ISR_definition.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_compiler_gcc.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_hal_structs.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_irqstub.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_primitives.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_common_ee_types.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_context.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_cpu.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_irq.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_nvic.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_cortex_mx_ee_systick.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_api.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_as_kernel.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_as_timing_prot.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_irq.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_api.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_common.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_inline.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_intfunc.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_irq.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_oo_kernel.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_rtdruid_versions.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_ee_tracing.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_eecfg.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/ErikaOS_event_definition.inc C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_BackLight.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_CS.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_CS_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_DC.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_DC_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_LED.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_LED_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_RES.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_RES_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SCL.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SCL_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SDA.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SDA_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI_IntClock.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/TFT_SPI_PVT.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/UART_LOG.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/UART_LOG_IntClock.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_1.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_1_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_2.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_2_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_3.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_3_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_4.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/button_4_aliases.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyPm.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevice.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cypins.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/cytypes.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/isr_ButtonLeft.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/isr_ButtonRight.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/Generated_Source/PSoC5/project.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/derivate.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/global.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/intToASCII.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/tft/tft.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/rte.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/rte_types.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_clock.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_clock_type.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_event.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sc_event_type.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/rte/sp_common.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/clock_statemachine.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/clock_statemachine_cfg.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/common.h C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/swc_clock_control.c C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/swc_clock_control.h 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/bsw/intToASCII.h : 
+
+C:/Jason/EIT/Semester_02/01_EAA/Lab/Assignment_2/ElectronicClock/ElectronicClock.cydsn/SourceFiles/asw/swc_clock_control.c : 
+
